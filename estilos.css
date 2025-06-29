@@ -1,49 +1,89 @@
 html {
-  height: 100%;
-  width: 100%;
-  font-family: 'Arial', sans-serif; 
-  background-color: #f4f4f4; 
-  color: #333; 
-}
-
-body {
   display: flex;
+  font-family:'Times New Roman', Times, serif;
+  background-color:rgb(252, 244, 235); 
+  color: #333; 
+  /*hola*/
+}
+body {
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-size: 18px; 
   padding: 20px 0; 
   min-height: 100vh; 
+  padding: 0;
+  margin: 0;
 }
+
 
 header {
   width: 100%; 
   height: 80px;
-  background-color: #00b09b; 
-  display: flex;
+
   align-items: center;
   justify-content: space-around;
-  padding: 0 20px; 
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+
+  padding: 0px;
 }
 
-.logo {
-  height: 75px;
+.logoPEMBU {
+  height: 125px;
   width: auto; 
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  
+}
+
+.logoICA {
+
+  height: 150px;
+  width: auto;
+
+  text-align: center;
+  filter: brightness(10);
+  margin: 1;
+}
+.logoUNAM {
+  height: 115px;
+  width: auto;
+  
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  filter:invert(1)
+  
 }
 
 h1 {
-  font-size: 2.5vw; 
+  font-size: 3vw; 
   color: darkslategray; 
-  margin: 0; 
+  text-align: center;
+  margin: 1; 
+}
+#div_header {
+
+  background-image: url('https://i0.wp.com/www.atmosfera.unam.mx/wp-content/uploads/2017/05/1-estrenan-segundo-piso-edificio-fondo-2013-e1494606204990.png?ssl=1'); /* <- Cambia esto por tu imagen de fondo */
+  height: 200%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px; 
-  margin-top: 20px; 
+  width: 500px;  
 }
 
 select {
