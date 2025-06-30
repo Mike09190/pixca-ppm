@@ -1,11 +1,16 @@
 html {
-  display: flex;
+ height: 100%;
+  width: 100%;
+  
+  
   font-family:'Times New Roman', Times, serif;
-  background-color:rgb(252, 244, 235); 
+  background-color:rgb(244, 233, 220); 
   color: #333; 
-  /*hola*/
+  margin: 0;
+  padding: 0;
 }
 body {
+   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -17,14 +22,20 @@ body {
 }
 
 
+
+
 header {
   width: 100%; 
   height: 80px;
+  background-color: #00b09b; 
 
+  display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 0 20px; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
 
-  padding: 0px;
+  padding: 0 20px;
 }
 
 .logoPEMBU {
