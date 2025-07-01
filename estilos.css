@@ -11,7 +11,24 @@ html {
   padding: 0;
   /*hola*/
 }
-
+#about {
+    background-color: #ffffff; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 20px; 
+    margin: 20px 0; 
+    width: 80%; 
+    max-width: 600px; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+#about h2 {
+    color: darkslategray; 
+    margin-bottom: 10px; 
+}
+#about p {
+    color: #333; 
+    line-height: 1.5; 
+}
 body {
   display: flex;
   flex-direction: column;
@@ -177,26 +194,4 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 .div_sel select {
   border: 1px solid #ccc; 
 
-}
-#descripcion {
-  max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-left: 5px solid #00b09b;
-  padding: 20px;
-  margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-#descripcion h2 {
-  color: #008075;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-#descripcion p {
-  color: #333;
 }
