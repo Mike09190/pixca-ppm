@@ -1,9 +1,10 @@
-const btn_plot = document.getElementById("btn_plot");
-btn_plot.addEventListener("click", plot);
-const station = document.getElementById("plantel");
-const sel_year = document.getElementById("year");
-const sel_month = document.getElementById("mes");
-const sel_fecha = document.getElementById("Fecha");
+const btn_plot = document.getElementById("btn_plot");/*boton*/
+btn_plot.addEventListener("click", plot);/*graficar*/
+const station = document.getElementById("plantel");/*estacion*/
+const flatpick = flatpickr("#date",dateFormat: "d/m/Y")
+const sel_year
+const sel_month
+const sel_date
 let currentStep = 1; 
 
 function get_csv(){
@@ -28,7 +29,7 @@ function hideButtons() {
   sel_fecha.style.display = "none";
   btn_plot.style.display = "none";
   document.getElementById("btn_download").style.display = "none";
-
+/*switch para las opciones y bloquearlas*/
   switch (currentStep) {
     case 1:
       station.style.display = "block";
@@ -73,7 +74,15 @@ function hideButtons() {
       break;
   }
 }
+if (selectedDates.length > 0) {
+  const fecha = selectedDates[0];
 
+  sel_year= fecha.getFullYear();
+  sel_month = fecha.getMonth() + 1;
+  sel_date = fecha.getDate();
+}
+
+/*
 async function load_years() {
   console.log('cambio', station.value);
   var year = await get_year(station.value);
@@ -113,8 +122,8 @@ async function load_dates() {
   }
   currentStep = 4;
   hideButtons();
-}
-
+}*/
+document.getElementById('sel_year').textContent: sel_year;
 station.addEventListener("change", load_years);
 sel_year.addEventListener("change", load_months);
 sel_month.addEventListener("change", load_dates);

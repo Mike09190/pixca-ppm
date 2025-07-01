@@ -9,7 +9,8 @@
         <script src="lib/echarts.min.js" > </script>
         <script defer src="lib/plot.js"></script>
         <script defer src="script.js"></script>
-
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <title> PM PEMBU</title>
     </head>
 
@@ -37,37 +38,18 @@
             </select> </label>
 
         </div>
-        
-        <div id="div_year" class="div_sel"> Año:
-            <label > <select id="year" class="selecciona" name='year' >
-                <option disabled selected value id="a"> Selecciona</option>
-            </select> </label>
 
+        <div class="input-group">
+                <label>Selecciona una fecha:</label>
+                <div id="date"></div>
         </div>
-
-        <div id="div_month" class="div_sel"> Mes:
-            <label > <select id="mes" class="selecciona" name='mes' >
-                <option disabled selected value id="a"> Selecciona</option>
-            </select> </label>
-
-        </div>
-
-
-        <div id="div_date" class="div_sel" > Fecha:
-            <label > <select id="Fecha" class="selecciona" name='date'>
-                <option disabled selected value id="a"> Selecciona</option>
-                <!-- <option value="2024-03-17"> 2024-03-17 </option> -->
-            </select> </label>
 
         </div>
         <div id="div_btn" class="div_sel" >
             <input type="button" value="Graficar" id="btn_plot"/>
             <a id="csvURL"> <input type="button" value="Descargar" id="btn_download"/></a>
         </div>
-        <div id="fecha2" class="div-date"> fecha2
-            <input type="month" class="fecha2">
-            <input type="datetime">
-            <input type="date">
+        
         </form>
 
         <div id="div_plot">
@@ -78,4 +60,3 @@
 
 </html>
 <!-- 6910 script, 3797index -->
-<!-- 3986 index, 1347css, 6934script-->
