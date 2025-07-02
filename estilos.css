@@ -120,6 +120,7 @@ select {
   margin-left: 10px; 
 }
 
+
 button, input[type="button"], input[type="submit"] { 
   font-size: 16px;
   background-color: #00b09b;
@@ -142,39 +143,6 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   width: 100%; 
   margin-top: 20px;
 }
-#div_plot {
-  position:relative;
-  padding: 1rem 2rem;
-  font-size: 1remm;
-  font-weight: 600;
-  color: #008075;
-  border: 2pc solid rgb(230, 194, 153);
-  display: flex;
-  justify-content: space-around; 
-  border-radius: 8px; 
-  cursor: pointer;
-  overflow: hidden;
-  transition: 1s;
-}
-#liquid {
-  background: linear-gradient(#333 0 0) no-repeat calc(200% - var(--p, 0%)) 100%/200% var(--p, 0.2em);
-  transition: 2s var(--t, 0s), 
-  background-position 0.3s calc(0.3s - var(--t, 0s));
-
-}
-#liquid:hover {
-  --p: 100%;
-  --t: 0.3s;
-  color:#ccc;
-}
-
-#div_plot {
-  width: 100%;
-  height: 500px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 20px; 
-}
 
 .selecciona {
   font-size: 18px;
@@ -194,10 +162,24 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     padding: 15px;
     border-radius: 5px;
     background-color: #f9f9f9;
+
 }
 
 #availability-calendar h3 {
     text-align: center;
     color: #333;
     margin-bottom: 15px;
+
+}
+#sel_year {
+
+background-color: white;
+  color: black;
+  border: 1px solid gray;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+select:hover {
+  /* Estilos al pasar el ratón */
+  background-color: lightblue;
+  color: darkblue;
 }
