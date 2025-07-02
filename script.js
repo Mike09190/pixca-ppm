@@ -1,112 +1,96 @@
-const btn_plot = document.getElementById("btn_plot");
+const btn_plot = document.getElementById("btn_plot"); //declarar los botones y cuadros
 btn_plot.addEventListener("click", plot);
 const station = document.getElementById("plantel");
-const sel_fecha = document.getElementById("month_input");
+const sel_year = document.getElementById("year");
+const sel_month = document.getElementById("mes");
+const sel_fecha = document.getElementById("Fecha");
+const btn_download = document.getElementById("btn_download");
 
-let currentStep = 1; 
-let sta_global;
 
-function get_csv(){
+const calendar = document.getElementById("availability-calendar"); //calendario
+if (!calendar) {
+  console.error("No se encontró el contenedor #availability-calendar");
+}
 
-  sta_global = station.value; 
-  const selectedDate = sel_fecha.value;
-  console.log(sta_global, selectedDate);
+function get_csv(){ //extraer el api
+  const sta = document.getElementById("plantel");
+  sid=sta.value;
+
+  const dte = document.getElementById("Fecha");
+  date = dte.value;
+  console.log( sid, date);
 
   const url = 'https://ruoa.unam.mx:8042/pm_api&sid='+ sid + '&date='+ date;
-  var a = document.getElementById('csvURL');
-  a.href=url;
-}
-
-hideButtons();
-
-function hideButtons() {
-  station.style.display = "none";
   
-  sel_fecha.style.display = "none";
-  btn_plot.style.display = "none";
-  document.getElementById("btn_download").style.display = "none";
-
-  switch (currentStep) {
-    case 1:
-      station.style.display = "block";
-      station.disabled = false; 
-      break;
-    case 2:
-      station.style.display = "block";
-      station.disabled = true; 
-      sel_fecha.style.display="block";
-      sel_fecha.disabled = false;
-      break;
-    case 3:
-      station.style.display = "block";
-      station.disabled = true; 
-      sel_fecha.style.display="block"
-      sel_fecha.disabled = true; 
-
-      btn_plot.style.display = "block";
-      document.getElementById("btn_download").style.display = "block";
-      get_csv();
-      break;
-  }
 }
 
-station.addEventListener("change", () => {
-  console.log('Estación cambiada:', station.value);
-  // Limpia cualquier selección de mes anterior
-  sta_global =station.value
-  month_input.value = '';
-  if (sta_global && sta_global !== "a") { // Asegúrate de que no sea la opción "Selecciona"
-    // Establecer el rango fijo y dinámico
-    const min_date = '2023-01-01'; // Límite mínimo fijo
 
-    // Límite máximo: la fecha actual
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0'); // Meses son base 0, por eso +1
-    const day = String(today.getDate()).padStart(2, '0');
-    const max_date = `${year}-${month}-${day}`;
+async function load_years() { //poner los años y guardar y borrar para meses
+  console.log('Estación:', station.value);
+  const years = await get_year(station.value);
+  calendar.innerHTML = "<h4>Selecciona un año: </h4>";
 
-    sel_fecha.min = min_date;
-    sel_fecha.max = max_date;
-    console.log(`Rango del input de fecha establecido de ${min_date} a ${max_date}`);
-    currentStep = 2; // Pasa al paso 2 (selección de fecha)
-  } else {
-      sel_fecha.disabled = true; // Deshabilita si no hay estación seleccionada
-      sel_fecha.min = "";
-      sel_fecha.max = "";
-      currentStep = 1;
-  }
-  hideButtons();
-});
+  years.forEach(y => {
+    const btn = document.createElement("button");
+    btn.textContent = y;
+    btn.classList.add("calendar-button");
 
-// EVENT LISTENER DEL INPUT DE FECHA (La lógica de validación se mantiene)
-sel_fecha.addEventListener("change", async () => {
-  console.log('Fecha cambiada:', sel_fecha.value);
-  const selectedDate = sel_fecha.value;
-  // Extrae año, mes y día de la fecha seleccionada
-  const [year, month, day] = selectedDate.split('-');
+    btn.addEventListener("click", () => {
+      calendar.innerHTML = ""; 
+      load_months(y);
+    });
+    calendar.appendChild(btn);
+  });
+}
 
-  if (sta_global && selectedDate) { // Asegúrate de que haya estación y fecha seleccionada
-    try {
-      // Obtener los días disponibles para el mes seleccionado usando get_days de plot.js
-      const availableDays = await get_days(sta_global, month);
-      // Validar si el día seleccionado está entre los días disponibles
-      if (availableDays && availableDays.includes(day)) {
-        console.log("La fecha seleccionada es válida.");
-        currentStep = 3; // Pasa al paso 3 (listo para graficar/descargar)
-      } else {
-        alert(`La fecha seleccionada (${selectedDate}) no tiene datos disponibles para esta estación. Por favor, selecciona una fecha válida.`);
-        sel_fecha.value = ''; // Limpia la selección inválida
-        currentStep = 2; // Permanece en el paso de selección de fecha
-      }
-    } catch (error) {
-      console.error("Error al validar la fecha:", error);
-      alert("Error al validar la fecha. Por favor, inténtalo de nuevo.");
-      sel_fecha.value = '';
-      currentStep = 2;
-    }
-  } else {
-      currentStep = 2; // Si la estación o la fecha no están seleccionadas por algún motivo
-  }
-  hideButtons();
-});
+async function load_months(year) {
+  console.log('Año:', year);
+  const months = await get_months(station.value, year);
+
+  calendar.innerHTML = `<h4>Meses disponibles: ${year}:</h4>`;
+
+  months.forEach(m => {
+    const btn = document.createElement("button");
+    btn.textContent = m;
+    btn.classList.add("calendar-button");
+
+    btn.addEventListener("click", () => {
+      calendar.innerHTML = ""; 
+      load_dates(year, m);
+    });
+
+    calendar.appendChild(btn);
+  });
+}
+
+async function load_dates(year, rawMonth) {
+  const onlyMonth = rawMonth.split("-").pop(); // evita duplicación
+  const days = await get_days(station.value, rawMonth);
+  calendar.innerHTML = `<h4>Días disponibles para ${year}-${onlyMonth}:</h4>`;
+
+  days.forEach(d => {
+    const fechaCompleta = d.trim();
+    
+    const btn = document.createElement("button");
+    btn.textContent = fechaCompleta;
+    btn.classList.add("calendar-button");
+
+    btn.addEventListener("click", () => {
+      console.log("Fecha seleccionada:", fechaCompleta);
+      document.getElementById("Fecha").value = fechaCompleta;
+
+      get_csv();
+      document.getElementById("btn_plot").disabled = false;
+      document.getElementById("btn_download").disabled = false;
+
+      const allButtons = calendar.querySelectorAll(".calendar-button");
+      allButtons.forEach(b => b.classList.remove("selected-date"));
+      btn.classList.add("selected-date");
+
+    });
+    calendar.appendChild(btn);
+  });
+}
+
+btn_plot.addEventListener("click", plot);
+station.addEventListener("change", load_years);
