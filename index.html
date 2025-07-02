@@ -46,13 +46,14 @@
 
         <div id="availability-calendar-container">
                 <h3>Fechas Disponibles:</h3>
-                <div  style="color: blue;"availability-calendar">
+                <div id="availability-calendar">
 
-                    <select  id="sel_year" size="4"></select>
+                    <select id="sel_year" size="4"></select>
 
-                    <select  id="sel_month" size="4" style="display:none;"></select>
+                    <select id="sel_month" size="4" style="display:none;"></select>
+
                     
-                    <select  id="sel_day" size="4" style="display:none;"></select>
+                    <select id="sel_day" size="4" style="display:none;"></select>
                 </div>
         <input type="hidden" id="Fecha" />
 
@@ -60,8 +61,8 @@
 
         <a id="csvURL"> <input type="button" value="Descargar" id="btn_download"/></a>
 
-        <div id="div_btn"  class="div_sel"> 
-            <input type="button" value="Graficar" id="btn_plot"  id="liquid" disabled />
+        <div id="div_btn" class="div_sel">
+            <input type="button" value="Graficar" id="btn_plot" disabled />
         </div>
 
         <div id="div_plot" style="width: 100%; height: 400px; margin-top: 20px;"></div>
