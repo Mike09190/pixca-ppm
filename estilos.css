@@ -136,8 +136,13 @@ button, input[type="button"], input[type="submit"] {
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
   background-color: #008075;
 }
-
 #div_btn {
+  display: flex;
+  justify-content: space-around; 
+  width: 100%; 
+  margin-top: 20px;
+}
+#div_plot {
   position:relative;
   padding: 1rem 2rem;
   font-size: 1remm;
@@ -160,7 +165,7 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 #liquid:hover {
   --p: 100%;
   --t: 0.3s;
-  color: #fff;
+  color:#ccc;
 }
 
 #div_plot {
