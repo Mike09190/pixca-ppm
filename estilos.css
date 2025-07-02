@@ -6,8 +6,6 @@ html {
   background-color: rgb(244, 233, 220); 
   color: #333; 
 
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -16,8 +14,9 @@ body {
   align-items: center;
   text-align: center;
   font-size: 18px; 
-  padding: 20px 0; 
+
   min-height: 100vh; 
+  margin:0;
 
 }
 
@@ -27,12 +26,12 @@ header {
 
   background-color: #00b09b; 
   display: flex;
-  align-items: center;
+  
   justify-content: space-around;
-  padding: 0 20px; 
+  padding: 0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
 }
-.logoPEMBU{
+.logoPembu{
   height: 125px;
   width: auto;
 
@@ -64,7 +63,7 @@ h1 {
 }
 #div_header {
   background-image: url('https://i0.wp.com/www.atmosfera.unam.mx/wp-content/uploads/2017/05/1-estrenan-segundo-piso-edificio-fondo-2013-e1494606204990.png?ssl=1');
-  height: 200%;
+  height: 200px;
   width: 100%;
   background-size: cover;
   background-position: center;
