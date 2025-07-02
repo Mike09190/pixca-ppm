@@ -20,8 +20,9 @@
             <span> <h1> Sistema de Monitoreo de Partículas </h1> </span>
         </div>
 
-        <form action='https://ruoa.unam.mx:8042/'>
-    
+        
+            <input type='hidden' name='pm_api'>
+
         <div id="div_sta" class="div_sel"> Estación:
             <label > <select id="plantel" class="selecciona" name='sid' >
                 <option disabled selected value id="a"> Selecciona</option>
@@ -37,23 +38,33 @@
             </select> </label>
 
         </div>
-        
-         <div id="div_month_input" class="div_sel" > Fecha (Mes):
-            <label> <input type="month" id="month_input" class="selecciona" name='month'> </label>
-        </div>
 
-        <div id="div_btn" class="div_sel" >
-            <input type="button" value="Graficar" id="btn_plot"/>
-            <a id="csvURL"> <input type="button" value="Descargar" id="btn_download"/></a>
-        </div>
-        </form>
+    <div id="availability-calendar-container">
+  <h3>Fechas Disponibles:</h3>
+  <div id="availability-calendar">
+    <label for="sel_year">Año:</label>
+    <select id="sel_year" size="4"></select>
 
-        <div id="div_plot">
+    <label for="sel_month">Mes:</label>
+    <select id="sel_month" size="4" style="display:none;"></select>
 
+    <label for="sel_day">Día:</label>
+    <select id="sel_day" size="4" style="display:none;"></select>
+  </div>
+  <input type="hidden" id="Fecha" />
+
+</div>
+
+    
         </div>
+        <div id="div_btn" class="div_sel">
+  <input type="button" value="Graficar" id="btn_plot" disabled />
+  <input type="button" value="Descargar" id="btn_download" disabled />
+ 
+</div>
+<div id="div_plot" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+
 
     </body>
 
 </html>
-<!-- 6910 script, 3797index -->
-<!-- 3986 index, 1347css, 6934script-->
