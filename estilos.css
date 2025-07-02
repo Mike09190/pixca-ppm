@@ -6,8 +6,8 @@ html {
   background-color: rgb(244, 233, 220); 
   color: #333; 
 
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -57,10 +57,15 @@ header {
   top: 0px;
   filter: invert(1);
 }
+h1 {
+  font-size: 2.5vw; 
+  color: darkslategray; 
+  margin: 0; 
+}
 #div_header {
   background-image: url('https://i0.wp.com/www.atmosfera.unam.mx/wp-content/uploads/2017/05/1-estrenan-segundo-piso-edificio-fondo-2013-e1494606204990.png?ssl=1');
-  height: 200px;
-  width: 100px;
+  height: 200%;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,11 +74,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-h1 {
-  font-size: 2.5vw; 
-  color: darkslategray; 
-  margin: 0; 
 }
 
 select {
