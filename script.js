@@ -21,6 +21,8 @@ function get_csv(){ //extraer el api
   console.log( sid, date);
 
   const url = 'https://ruoa.unam.mx:8042/pm_api&sid='+ sid + '&date='+ date;
+  var a = document.getElementById('csvURL');
+  a.href=url;
   
 }
 
