@@ -194,6 +194,6 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 #right_image {
     height: 200px;
     width: auto; 
-    margin-right: 0 ;
+    margin-right: auto ;
 }
 
