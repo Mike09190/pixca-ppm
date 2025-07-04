@@ -25,7 +25,7 @@ function get_csv(){ //extraer el api
   a.href=url;
   
 }
-
+/*
 document.addEventListener('DOMContentLoaded', function() {
     const selectEstacion = document.getElementById('plantel');
     const infoBox = document.getElementById('info_box');
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Error al cargar el archivo:', error));
     });
-});
+});*/
 
 async function load_years() { //poner los años y guardar y borrar para meses
   console.log('Estación:', station.value);
