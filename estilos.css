@@ -204,6 +204,7 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     width: 30%; 
     height: auto;
     margin: 20px 0; 
+    float: right;
 }
 footer {
     background-color: #00796b; 
