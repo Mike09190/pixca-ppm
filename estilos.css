@@ -211,7 +211,7 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   margin: 10%;
   text-align: left;
 }
-#Estaciones {
+.Estaciones {
   float: right;
   width: 35%;
   height: auto;
