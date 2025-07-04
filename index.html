@@ -1,79 +1,197 @@
-<!DOCTYPE html>
-<html lang='es'>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+html {
+  height: 100%;
+  width: 100%;
 
-        <link rel="shortcut icon" href="https://ruoa.unam.mx/logos/RUOA_logo.png"/>
-        <link rel="stylesheet" href="estilos.css" />
-        <script src="lib/echarts.min.js" > </script>
-        <script defer src="lib/plot.js"></script>
-        <script defer src="script.js"></script>
+  font-family:'Times New Roman', Times, serif; 
+  background-color: rgb(244, 233, 220); 
+  color: #333; 
 
-        <title> PM PEMBU</title>
-    </head>
+}
 
-    <body>
-        <div id="div_header">
-            <img class='logoPembu' src='https://ruoa.unam.mx/logos/logo_pembu2.png' alt='Logo PEMBU' >
-            <img class='logoICA' src='https://www.atmosfera.unam.mx/wp-content/uploads/2024/05/Recurso-4@2x.png' alt='Logo ICAyCC' >
-            <img class='logoUNAM' src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1822px-Escudo-UNAM-escalable.svg.png' alt='Logo UNAM'>
-        </div>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 18px; 
 
-        <span> <h1> Sistema de Monitoreo de Partículas </h1> </span>
-           <div id="info_box">
-        
-     <div id="info_container">
-        <div id="info_box">
-            <h2>¿Qué hace esta página?</h2>
-            <p>Esta página permite monitorear las partículas en el aire a través de diferentes estaciones. Puedes seleccionar una estación, elegir fechas disponibles y descargar los datos en formato CSV.</p>
-        </div>
-        <img class= "ima_2"src="https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg" alt="Descripción" id="right_image " />
-        
-    </div>
+  min-height: 100vh; 
+  margin:0;
 
-        <input type='hidden' name='pm_api'>
+}
 
-        <div id="div_sta" class="div_sel"> Estación:
-            <label > <select id="plantel" class="selecciona" name='sid' >
-                <option disabled selected value id="a"> Selecciona</option>
-                <option value="pmpembu20230001"> pmpembu20230001 </option>
-                <option value="pmpembu20230002"> pmpembu20230002 </option>
-                <option value="pmpembu20230003"> pmpembu20230003 </option>
-                <option value="pmpembu20230004"> pmpembu20230004 </option>
-                <option value="pmpembu20230005"> pmpembu20230005 </option>
-                <option value="pmpembu20230006"> pmpembu20230006 </option>
-                <option value="pixca_ppm012"> pixca_ppm012 </option>
-                <option value="pixca_ppm013"> pixca_ppm013 </option>
-                <option value="pixca_ppm015"> pixca_ppm015 </option>
-            </select> </label>
+header {
+  width: 100%; 
+  height: 80px;
 
-        </div>
+  background-color: #00b09b; 
+  display: flex;
+  
+  justify-content: space-around;
+  padding: 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+.logoPembu{
+  height: 125px;
+  width: auto;
 
-        <div id="availability-calendar-container">
-                <h3>Fechas Disponibles:</h3>
-                <div id="availability-calendar">
-                    <label for="sel_year">Año:</label>
-                    <select id="sel_year" size="4"></select>
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.logoICA {
+  height: 150px;
+  width: auto;
+  
+  text-align: center;
+  filter: brightness();
+  margin: 1;
+}
+.logoUNAM {
+  height: 115px;
+  width: auto;
 
-                    <label for="sel_month">Mes:</label>
-                    <select id="sel_month" size="4" style="display:none;"></select>
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  filter: invert(1);
+}
+h1 {
+  font-size: 2.5vw; 
+  color: darkslategray; 
+  margin: 0; 
+}
+#div_header {
+  background-image: url('https://i0.wp.com/www.atmosfera.unam.mx/wp-content/uploads/2017/05/1-estrenan-segundo-piso-edificio-fondo-2013-e1494606204990.png?ssl=1');
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-                    <label for="sel_day">Día:</label>
-                    <select id="sel_day" size="4" style="display:none;"></select>
-                </div>
-        <input type="hidden" id="Fecha" />
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:0;
+  padding:0;
+}
 
-        </div>
+#info_box {
+    background-color: #ffffff; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 20px; 
+    margin: 20px 0; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 80%; 
+    max-width: 600px; 
+    text-align: left; 
+}
+#info_box h2 {
+    font-size: 1.8em; 
+    color: #00b09b; 
+    margin-bottom: 10px; 
+}
+#info_box p {
+    font-size: 1em; 
+    color: #333; 
+    line-height: 1.5; 
+}
+select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; 
+  appearance: none; 
+}
 
-        <a id="csvURL"> <input type="button" value="Descargar" id="btn_download"/></a>
+.div_sel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  width: 100%; 
+  margin-bottom: 15px; 
+}
 
-        <div id="div_btn" class="div_sel">
-            <input type="button" value="Graficar" id="btn_plot" disabled />
-        </div>
+.div_sel label {
+  margin-left: 10px; 
+}
 
-        <div id="div_plot" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+button, input[type="button"], input[type="submit"] { 
+  font-size: 16px;
+  background-color: #00b09b;
+  color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #00b09b;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    </body>
+button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
+  background-color: #008075;
+}
 
-</html>
+#div_btn {
+  display: flex;
+  justify-content: space-around; 
+  width: 100%; 
+  margin-top: 20px;
+}
+
+#div_plot {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px; 
+}
+
+.selecciona {
+  font-size: 18px;
+  margin: 5px;
+  border-style: hidden;
+  background-color: #f5f5f5; 
+  padding: 10px;
+  border-radius: 5px;
+  color: #333;
+  appearance: none; 
+  border: 1px solid #ccc; 
+}
+
+#availability-calendar-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#availability-calendar h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+#info_container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 80%; 
+    margin: 20px 0; 
+}
+#info_box {
+    flex: 1; 
+    margin-right: 20px; 
+    text-align: left; 
+}
+#right_image {
+    height: 200px;
+    width: auto; 
+}
