@@ -16,11 +16,6 @@ body {
   margin:0;
 
 }
-h1{
-  text-align: center;
-  font-size: 4;
-}
-
 
 header {
   width: 100%; 
@@ -65,9 +60,10 @@ header {
   filter: invert(1);
 }
 h1 {
-  font-size: 2.5vw; 
+  font-size: 4vw; 
   color: darkslategray; 
   margin: 0; 
+  text-align: center;
 }
 #div_header {
   display: flex;
