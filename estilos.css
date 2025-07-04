@@ -198,7 +198,7 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     margin-left: 20px;
     border-radius: 10px;
 }
-img_2 {
+#img_2 {
   display: flex;
     justify-content: flex-start;
     width: 30%; 
