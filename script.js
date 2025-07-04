@@ -25,7 +25,7 @@ function get_csv(){ //extraer el api
   a.href=url;
   
 }
-// Aquí comienza el nuevo código para cargar la información de la estación
+
 document.addEventListener('DOMContentLoaded', function() {
     const selectEstacion = document.getElementById('plantel');
     const infoBox = document.getElementById('info_box');
