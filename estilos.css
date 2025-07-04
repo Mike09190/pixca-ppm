@@ -208,6 +208,6 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     justify-content: flex-end;
 }
 #btn_download {
-  margin: 2;
+  margin: 10%;
   text-align: left;
 }
