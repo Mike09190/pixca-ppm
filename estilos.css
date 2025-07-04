@@ -212,6 +212,8 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   text-align: left;
 }
 .cuadro {
+  margin: 10px;
+  padding: left right 10px;
   display: flex;
   justify-content: space-between;
 }
