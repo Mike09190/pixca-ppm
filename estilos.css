@@ -211,10 +211,12 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   margin: 10%;
   text-align: left;
 }
+.cuadro {
+  display: flex;
+  justify-content: space-between;
+}
 .Estaciones {
   float: right;
   width: 35%;
   height: auto;
-  align-items: right;
-  text-align: right;
 }
