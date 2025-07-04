@@ -215,4 +215,6 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   float: right;
   width: 35%;
   height: auto;
+  align-items: right;
+  text-align: right;
 }
