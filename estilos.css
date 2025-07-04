@@ -142,8 +142,9 @@ button, input[type="button"], input[type="submit"] {
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
   background-color: red;
 }
-button:active, input[type="button"]:active, input[type="submit"]:active { 
-  background-color: blue;
+.calendar-buttom.selected-date {
+  background-color: #00b09b;
+  color: white;
 }
 
 #div_btn {
@@ -226,4 +227,10 @@ button:active, input[type="button"]:active, input[type="submit"]:active {
   float: right;
   width: 35%;
   height: auto;
+}
+.Botones {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
