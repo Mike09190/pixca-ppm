@@ -176,12 +176,13 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     padding: 15px;
     border-radius: 5px;
     background-color: #f9f9f9;
-    text-align: left;
+    text-align: center;
     width: 40%;
     height: 60%;
 }
 
 #availability-calendar h3 {
+    font-size: 1.8em;
     text-align: center;
     color: #333;
     margin-bottom: 15px;
@@ -215,7 +216,7 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   margin: 10px;
   padding: left right 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between 20%;
 }
 .Estaciones {
   float: right;
