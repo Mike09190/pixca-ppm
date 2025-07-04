@@ -3,7 +3,7 @@ html {
   width: 100%;
 
   font-family:'Times New Roman', Times, serif; 
-  background-color: rgb(244, 233, 220); 
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea); 
   color: #333; 
 
 }

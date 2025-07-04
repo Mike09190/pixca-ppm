@@ -1,7 +1,7 @@
 const btn_plot = document.getElementById("btn_plot"); //declarar los botones y cuadros
 btn_plot.addEventListener("click", plot);
 const station = document.getElementById("plantel");
-const sel_year = document.getElementById("year");
+const sel_year = document.getElementById("year");e
 const sel_month = document.getElementById("mes");
 const sel_fecha = document.getElementById("Fecha");
 const btn_download = document.getElementById("btn_download");
@@ -25,7 +25,30 @@ function get_csv(){ //extraer el api
   a.href=url;
   
 }
-
+// Aquí comienza el nuevo código para cargar la información de la estación
+document.addEventListener('DOMContentLoaded', function() {
+    const selectEstacion = document.getElementById('plantel');
+    const infoBox = document.getElementById('info_box');
+    selectEstacion.addEventListener('change', function() {
+        const selectedValue = this.value;
+        fetch('estaciones.txt') // Asegúrate de que la ruta sea correcta
+            .then(response => response.text())
+            .then(data => {
+                const estaciones = data.split('\n');
+                const estacion = estaciones.find(est => est.split('|')[0] === selectedValue);
+                if (estacion) {
+                    const [id, nombre, descripcion] = estacion.split('|');
+                    infoBox.innerHTML = `
+                        <h2>${nombre}</h2>
+                        <p>${descripcion}</p>
+                    `;
+                } else {
+                    infoBox.innerHTML = `<p>No se encontró información para la estación seleccionada.</p>`;
+                }
+            })
+            .catch(error => console.error('Error al cargar el archivo:', error));
+    });
+});
 
 async function load_years() { //poner los años y guardar y borrar para meses
   console.log('Estación:', station.value);
@@ -64,6 +87,7 @@ async function load_months(year) {
     calendar.appendChild(btn);
   });
 }
+
 
 async function load_dates(year, rawMonth) {
   const onlyMonth = rawMonth.split("-").pop(); // evita duplicación
