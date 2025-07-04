@@ -198,6 +198,13 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     margin-left: 20px;
     border-radius: 10px;
 }
+img_2 {
+  display: flex;
+    justify-content: flex-start;
+    width: 30%; 
+    height: auto;
+    margin: 20px 0; 
+}
 footer {
     background-color: #00796b; 
     color: white; 
