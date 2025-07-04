@@ -1,7 +1,7 @@
 const btn_plot = document.getElementById("btn_plot"); //declarar los botones y cuadros
 btn_plot.addEventListener("click", plot);
 const station = document.getElementById("plantel");
-const sel_year = document.getElementById("year");e
+const sel_year = document.getElementById("year");
 const sel_month = document.getElementById("mes");
 const sel_fecha = document.getElementById("Fecha");
 const btn_download = document.getElementById("btn_download");
