@@ -177,7 +177,8 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     border-radius: 5px;
     background-color: #f9f9f9;
     text-align: left;
-    width: 30%;
+    width: 40%;
+    height: 60%;
 }
 
 #availability-calendar h3 {
@@ -205,4 +206,8 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     text-align:right;
     display: flex;
     justify-content: flex-end;
+}
+#btn_download {
+  margin: 2;
+  text-align: left;
 }
