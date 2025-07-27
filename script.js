@@ -6,7 +6,7 @@ const sel_month = document.getElementById("mes");
 const sel_fecha = document.getElementById("Fecha");
 const btn_download = document.getElementById("btn_download");
 
-const ImagenesDeEstaciones ={
+/*const ImagenesDeEstaciones ={
   "pmpembu20230001": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pmpembu20230002": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pmpembu20230003": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
@@ -16,7 +16,7 @@ const ImagenesDeEstaciones ={
   "pixca_ppm012": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pixca_ppm013" : "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pixca_ppm015": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg"
-};
+};*/
 
 
 const calendar = document.getElementById("availability-calendar"); //calendario
@@ -37,31 +37,6 @@ function get_csv(){ //extraer el api
   a.href=url;
   
 }
-/*
-document.addEventListener('DOMContentLoaded', function() {
-    const selectEstacion = document.getElementById('plantel');
-    const infoBox = document.getElementById('info_box');
-    selectEstacion.addEventListener('change', function() {
-        const selectedValue = this.value;
-        fetch('estaciones.txt') // Asegúrate de que la ruta sea correcta
-            .then(response => response.text())
-            .then(data => {
-                const estaciones = data.split('\n');
-                const estacion = estaciones.find(est => est.split('|')[0] === selectedValue);
-                if (estacion) {
-                    const [id, nombre, descripcion] = estacion.split('|');
-                    infoBox.innerHTML = `
-                        <h2>${nombre}</h2>
-                        <p>${descripcion}</p>
-                    `;
-                } else {
-                    infoBox.innerHTML = `<p>No se encontró información para la estación seleccionada.</p>`;
-                }
-            })
-            .catch(error => console.error('Error al cargar el archivo:', error));
-    });
-});*/
-
 async function load_years() { //poner los años y guardar y borrar para meses
   console.log('Estación:', station.value);
   const years = await get_year(station.value);
@@ -84,7 +59,7 @@ async function load_months(year) {
   console.log('Año:', year);
   const months = await get_months(station.value, year);
 
-  calendar.innerHTML = `<h4>Meses disponibles: ${year}:</h4>`;
+  calendar.innerHTML = `<h4>Meses disponibles en ${year}</h4>`;
 
   months.forEach(m => {
     const btn = document.createElement("button");
@@ -132,7 +107,7 @@ async function load_dates(year, rawMonth) {
 
 btn_plot.addEventListener("click", plot);
 station.addEventListener("change", load_years);
-
+/*
 station.addEventListener("change", () => {load_years();
 const SelecStation = station.value;
 const img= document.getElementById("ImagenEstacion");
@@ -146,3 +121,4 @@ if(ImagenesDeEstaciones[SelecStation])
   img.style.display= "none";
 }
 });
+*/
