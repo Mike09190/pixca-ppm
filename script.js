@@ -136,7 +136,7 @@ station.addEventListener("change", load_years);
 
 station.addEventListener("change", () => {load_years();
 const SelecStation = station.value;
-const img= document.getElementById("ImagenEstacion");
+const img= document.getElementById("right_image");
 
 if(ImagenesDeEstaciones[SelecStation])
 {
