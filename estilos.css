@@ -1,6 +1,6 @@
 html {
   font-family:'Times New Roman', Times, serif; 
-  background: linear-gradient(to bottom right, #faf6e0, rgb(238, 232, 170)); 
+  background: linear-gradient(to bottom right, #fdf2b8, rgb(238, 232, 170)); 
 }
 body {
   display: flex;
@@ -137,7 +137,7 @@ h4{
 }
 button, input[type="button"], input[type="submit"] { 
   font-size: 16px;
-  background-color: rgb(240, 230, 140);
+  background-color: rgb(15, 165, 195);
   color: #fff;
   border-style: solid;
   border-color: #01887854;
@@ -148,7 +148,7 @@ button, input[type="button"], input[type="submit"] {
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
-  background-color:rgb(255, 215, 0);
+  background-color:rgba(28, 125, 222, 0.801);
 }
 
 .Botones {
