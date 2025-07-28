@@ -80,10 +80,10 @@ h1 {
     align-items: center; 
 }
 #right_image {
-    height: 200px;
-    width: auto; 
+    height: auto;
+    width: 28%; 
     display: flex;
-    margin: 20%;
+    margin: 10%;
     position: absolute;
     right: 0;
 }
