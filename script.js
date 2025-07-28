@@ -6,7 +6,7 @@ const sel_month = document.getElementById("mes");
 const sel_fecha = document.getElementById("Fecha");
 const btn_download = document.getElementById("btn_download");
 
-/*const ImagenesDeEstaciones ={
+const ImagenesDeEstaciones ={
   "pmpembu20230001": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pmpembu20230002": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pmpembu20230003": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
@@ -16,7 +16,7 @@ const btn_download = document.getElementById("btn_download");
   "pixca_ppm012": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pixca_ppm013" : "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
   "pixca_ppm015": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg"
-};*/
+};
 
 
 const calendar = document.getElementById("availability-calendar"); //calendario
@@ -133,7 +133,7 @@ async function load_dates(year, rawMonth) {
 
 btn_plot.addEventListener("click", plot);
 station.addEventListener("change", load_years);
-/*
+
 station.addEventListener("change", () => {load_years();
 const SelecStation = station.value;
 const img= document.getElementById("ImagenEstacion");
@@ -147,4 +147,4 @@ if(ImagenesDeEstaciones[SelecStation])
   img.style.display= "none";
 }
 });
-*/
+
