@@ -37,9 +37,20 @@ function get_csv(){ //extraer el api
   a.href=url;
   
 }
-async function load_years() { //poner los años y guardar y borrar para meses
+
+
+async function load_years() {
+  const estacionActual = station.value;
+  const yearsRaw = await get_year(estacionActual);
+
+  
+  const years = yearsRaw.filter(y => /^\d{4}$/.test(y.trim()));//formato
   console.log('Estación:', station.value);
-  const years = await get_year(station.value);
+  if (years.length === 0) {
+    calendar.innerHTML = "<h4>No hay años disponibles para esta estación.</h4>";
+    return;
+  }
+
   calendar.innerHTML = "<h4>Selecciona un año: </h4>";
 
   years.forEach(y => {
@@ -48,16 +59,31 @@ async function load_years() { //poner los años y guardar y borrar para meses
     btn.classList.add("calendar-button");
 
     btn.addEventListener("click", () => {
-      calendar.innerHTML = ""; 
+      calendar.innerHTML = "";
       load_months(y);
     });
+
     calendar.appendChild(btn);
   });
 }
 
+
 async function load_months(year) {
   console.log('Año:', year);
-  const months = await get_months(station.value, year);
+  const monthsRaw = await get_months(station.value, year);
+
+  const months = monthsRaw.filter(m => {
+    return (
+      !m.includes(".txt") &&
+      !m.includes(".tar.gz") &&
+      /^(\d{4}-\d{2})$/.test(m.trim()) //formato
+    );
+  });
+
+  if (months.length === 0) {
+    calendar.innerHTML = `<h4>No hay meses válidos para ${year}</h4>`;
+    return;
+  }
 
   calendar.innerHTML = `<h4>Meses disponibles en ${year}</h4>`;
 
@@ -67,14 +93,13 @@ async function load_months(year) {
     btn.classList.add("calendar-button");
 
     btn.addEventListener("click", () => {
-      calendar.innerHTML = ""; 
+      calendar.innerHTML = "";
       load_dates(year, m);
     });
 
     calendar.appendChild(btn);
   });
 }
-
 
 async function load_dates(year, rawMonth) {
   const onlyMonth = rawMonth.split("-").pop(); // evita duplicación
@@ -104,6 +129,7 @@ async function load_dates(year, rawMonth) {
     calendar.appendChild(btn);
   });
 }
+
 
 btn_plot.addEventListener("click", plot);
 station.addEventListener("change", load_years);
