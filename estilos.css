@@ -1,6 +1,6 @@
 html {
   font-family:'Times New Roman', Times, serif; 
-  background: linear-gradient(to bottom right, #fdf2b8, rgb(238, 232, 170)); 
+  background: linear-gradient(to bottom right, #c6b1c9, #aa8caf); 
 }
 body {
   display: flex;
@@ -126,7 +126,7 @@ h4{
   padding: 2px;
   display: flex;
   justify-content: center;
-  background-color: rgb(218, 165, 32);
+  background-color: #72467c;
 }
 #availability-calendar-container {
     margin: 5px;
@@ -137,7 +137,7 @@ h4{
 }
 button, input[type="button"], input[type="submit"] { 
   font-size: 16px;
-  background-color: rgb(15, 165, 195);
+  background-color: #007887;
   color: #fff;
   border-style: solid;
   border-color: #01887854;
@@ -148,7 +148,7 @@ button, input[type="button"], input[type="submit"] {
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
-  background-color:rgba(28, 125, 222, 0.801);
+  background-color:#005687;
 }
 
 .Botones {
