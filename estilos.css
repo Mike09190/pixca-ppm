@@ -174,3 +174,9 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   position: absolute;
   left: 30%;
 }
+#btn_back {
+  display: flex;
+  justify-items: center;
+  width: 10%;
+
+}
