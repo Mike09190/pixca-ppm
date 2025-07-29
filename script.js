@@ -6,6 +6,8 @@ const sel_month = document.getElementById("mes");
 const sel_fecha = document.getElementById("Fecha");
 const btn_download = document.getElementById("btn_download");
 let estadoPanel = "años";
+let añoSeleccionado = null;
+let mesSeleccionado = null;
 const btnBack = document.getElementById("btn_back");
 
 
@@ -46,11 +48,11 @@ function get_csv(){ //extraer el api
 async function load_years() {
   const estacionActual = station.value;
   const yearsRaw = await get_year(estacionActual);
+  console.log('Estación:', station.value);
   calendar.innerHTML = "";
 
   
   const years = yearsRaw.filter(y => /^\d{4}$/.test(y.trim()));//formato
-  console.log('Estación:', station.value);
   if (years.length === 0) {
     calendar.innerHTML = "<h4>No hay años disponibles para esta estación.</h4>";
     return;
@@ -76,9 +78,10 @@ async function load_years() {
 
 async function load_months(year) {
   console.log('Año:', year);
+  console.log('Estación:', station.value);
   const monthsRaw = await get_months(station.value, year);
   calendar.innerHTML = "";
-
+  añoSeleccionado = year;
   const months = monthsRaw.filter(m => {
     return (
       !m.includes(".txt") &&
@@ -112,8 +115,10 @@ async function load_months(year) {
 }
 
 async function load_dates(year, rawMonth) {
+  console.log("mes: ", rawMonth)
   const onlyMonth = rawMonth.split("-").pop(); // evita duplicación
   const days = await get_days(station.value, rawMonth);
+  mesSeleccionado = rawMonth;
   calendar.innerHTML = `<h4>Días disponibles para ${year}-${onlyMonth}:</h4>`;
   calendar.innerHTML = "";
 
@@ -165,12 +170,12 @@ if(ImagenesDeEstaciones[SelecStation])
 });
 btnBack.addEventListener("click", () => {
   if (estadoPanel === "días") {
-    let año = document.getElementById("Fecha").value.split("-")[0];
-    load_months(año);
-    estadoPanel = "meses";
+    if (añoSeleccionado) {
+      load_months(añoSeleccionado);
+      estadoPanel = "meses";
+    }
   } else if (estadoPanel === "meses") {
     load_years();
     estadoPanel = "años";
   }
 });
-
