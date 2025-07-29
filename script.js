@@ -5,6 +5,9 @@ const sel_year = document.getElementById("year");
 const sel_month = document.getElementById("mes");
 const sel_fecha = document.getElementById("Fecha");
 const btn_download = document.getElementById("btn_download");
+let estadoPanel = "años";
+const btnBack = document.getElementById("btn_back");
+
 
 const ImagenesDeEstaciones ={
   "pmpembu20230001": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
@@ -43,6 +46,7 @@ function get_csv(){ //extraer el api
 async function load_years() {
   const estacionActual = station.value;
   const yearsRaw = await get_year(estacionActual);
+  calendar.innerHTML = "";
 
   
   const years = yearsRaw.filter(y => /^\d{4}$/.test(y.trim()));//formato
@@ -63,8 +67,9 @@ async function load_years() {
       calendar.innerHTML = "";
       load_months(y);
     });
-
     calendar.appendChild(btn);
+    estadoPanel = "años";
+    btnBack.style.display = "none";
   });
 }
 
@@ -72,6 +77,7 @@ async function load_years() {
 async function load_months(year) {
   console.log('Año:', year);
   const monthsRaw = await get_months(station.value, year);
+  calendar.innerHTML = "";
 
   const months = monthsRaw.filter(m => {
     return (
@@ -99,6 +105,9 @@ async function load_months(year) {
     });
 
     calendar.appendChild(btn);
+
+    estadoPanel = "meses";
+    btnBack.style.display = "inline-block";
   });
 }
 
@@ -106,6 +115,7 @@ async function load_dates(year, rawMonth) {
   const onlyMonth = rawMonth.split("-").pop(); // evita duplicación
   const days = await get_days(station.value, rawMonth);
   calendar.innerHTML = `<h4>Días disponibles para ${year}-${onlyMonth}:</h4>`;
+  calendar.innerHTML = "";
 
   days.forEach(d => {
     const fechaCompleta = d.trim();
@@ -127,9 +137,14 @@ async function load_dates(year, rawMonth) {
       btn.classList.add("selected-date");
 
     });
+
     calendar.appendChild(btn);
+
+        estadoPanel = "días";
+    btnBack.style.display = "inline-block";
   });
 }
+
 
 
 btn_plot.addEventListener("click", plot);
@@ -148,4 +163,13 @@ if(ImagenesDeEstaciones[SelecStation])
   img.style.display= "none";
 }
 });
-
+btnBack.addEventListener("click", () => {
+  if (estadoPanel === "días") {
+    let año = document.getElementById("Fecha").value.split("-")[0];
+    load_months(año);
+    estadoPanel = "meses";
+  } else if (estadoPanel === "meses") {
+    load_years();
+    estadoPanel = "años";
+  }
+});
