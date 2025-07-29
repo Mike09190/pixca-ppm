@@ -1,6 +1,6 @@
 html {
   font-family:'Times New Roman', Times, serif; 
-  background: linear-gradient(to bottom right, #c6b1c9, #aa8caf); 
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea); 
 }
 body {
   display: flex;
@@ -126,7 +126,7 @@ h4{
   padding: 2px;
   display: flex;
   justify-content: center;
-  background-color: #72467c;
+  background-color:rgba(10, 142, 194, 0.661);
 }
 #availability-calendar-container {
     margin: 5px;
@@ -137,7 +137,7 @@ h4{
 }
 button, input[type="button"], input[type="submit"] { 
   font-size: 16px;
-  background-color: #007887;
+  background-color: #00b09b;
   color: #fff;
   border-style: solid;
   border-color: #01887854;
@@ -148,7 +148,7 @@ button, input[type="button"], input[type="submit"] {
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
-  background-color:#005687;
+  background-color:rgb(6, 197, 149);
 }
 
 .Botones {
@@ -177,6 +177,6 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 #btn_back {
   display: flex;
   justify-items: center;
-  width: 10%;
+  width: auto;
 
 }

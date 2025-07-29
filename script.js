@@ -173,3 +173,4 @@ btnBack.addEventListener("click", () => {
     estadoPanel = "años";
   }
 });
+
