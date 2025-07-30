@@ -1,6 +1,6 @@
 html {
   font-family:'Times New Roman', Times, serif; 
-  background: linear-gradient(to bottom right, #e0f7fa, #80deea); 
+  background: linear-gradient(to bottom right, #e0f7fa, #7b2cbf) 
 }
 body {
   display: flex;
@@ -12,7 +12,7 @@ body {
   display: flex;
   background-image: url('https://i0.wp.com/www.atmosfera.unam.mx/wp-content/uploads/2017/05/1-estrenan-segundo-piso-edificio-fondo-2013-e1494606204990.png?ssl=1');
   width: 100%;
-  height: 200px;
+  height: 110px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ body {
   justify-content: center;
 }
 .logoPembu{
-  height: 14%;
+  height: 10%;
   width: auto;
 
   display: flex;
@@ -32,13 +32,13 @@ body {
 .logoICA {
 
   width: auto;
-  height: 70%;
+  height: 80%;
 
   
   display: flex;
 }
 .logoUNAM {
-  height: 15%;
+  height: 11%;
   width: auto;
   
   display: flex;
@@ -49,15 +49,14 @@ body {
   filter: invert(1);
 }
 h1 {
-  font-size: 5vw; 
-  color: rgb(33, 56, 56); 
+  font-size: 3.5vw; 
+  color: rgb(3, 4, 4); 
    
   text-align: center;
   margin:20px;
 }
 #info_box {
-    background-color: #ffffff; 
-    border: 1px solid #ccc; 
+    background-color: #38d5be; 
     padding: 2%; 
     margin: 3%; 
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
@@ -66,11 +65,11 @@ h1 {
 }
 #info_box h2 {
     font-size: 2em; 
-    color: #00b09b; 
+    color: #968b04; 
     margin-bottom: 5%; 
 }
 #info_box p {
-    color: #333; 
+    color: #03050c; 
     line-height: 1.5; 
 }
 #info_container {
@@ -81,9 +80,9 @@ h1 {
 }
 #right_image {
     height: auto;
-    width: 28%; 
+    width: 25%; 
     display: flex;
-    margin: 10%;
+    margin: 3%;
     position: absolute;
     right: 0;
 }
@@ -109,7 +108,6 @@ h3 {
     margin: 3%;
 }
 h4{
-  background-color: #adadad;
    background-size: contain;
    width: 70%;
   font-size: 1.3em;
@@ -126,16 +124,18 @@ h4{
   padding: 2px;
   display: flex;
   justify-content: center;
-  background-color:rgba(10, 142, 194, 0.661);
+  background: linear-gradient(to bottom right, #9659cb, #a7249e)
 }
 #availability-calendar-container {
     margin: 5px;
     padding: 15px;
     border-radius: 5px;
-    background-color: #f9f9f9;
-    width: 40%;
+    background-color: #38d5be;
+    width: 50%;
 }
 button, input[type="button"], input[type="submit"] { 
+    width: 100px;
+  justify-content: center;
   font-size: 16px;
   background-color: #00b09b;
   color: #fff;
@@ -148,9 +148,14 @@ button, input[type="button"], input[type="submit"] {
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
-  background-color:rgb(6, 197, 149);
+  background-color:rgb(147, 227, 207);
 }
-
+button:active, input[type="button"]:active, input[type="submit"]:active { 
+  background-color:rgb(124, 11, 194);
+}
+button::marker, input[type="button"]::marker, input[type="submit"]::marker { 
+  background-color:rgb(124, 11, 194);
+}
 .Botones {
   display: flex;
   justify-content: space-between;
@@ -164,19 +169,29 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 }
 #div_btn {
   display: flex;
-  position: absolute;
-  right: 30%;
+  
 }
 
 #btn_download {
   margin: .5%;
   display: flex;
-  position: absolute;
-  left: 30%;
+  background-color: #7b2cbf;
+}
+#btn_plot {
+  background-color: #7b2cbf;
 }
 #btn_back {
-  display: flex;
-  justify-items: center;
-  width: 100px;
+  display: grid;
+  justify-content: center;
+    align-items: center;
 
+  width: 100px;
+  background-color: #7b2cbf;
+
+}
+.solo-flecha {
+  width: 20px;        
+  height: 20px;
+  background: none;
+  border: none;
 }

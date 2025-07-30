@@ -9,6 +9,7 @@ let estadoPanel = "años";
 let añoSeleccionado = null;
 let mesSeleccionado = null;
 const btnBack = document.getElementById("btn_back");
+let DescargaActi = null;
 
 
 const ImagenesDeEstaciones ={
@@ -44,8 +45,8 @@ function get_csv(){ //extraer el api
   
 }
 
-
 async function load_years() {
+  DescargaActi = "none";
   const estacionActual = station.value;
   const yearsRaw = await get_year(estacionActual);
   console.log('Estación:', station.value);
@@ -77,6 +78,7 @@ async function load_years() {
 
 
 async function load_months(year) {
+  DescargaActi = "none";
   console.log('Año:', year);
   console.log('Estación:', station.value);
   const monthsRaw = await get_months(station.value, year);
@@ -106,15 +108,22 @@ async function load_months(year) {
       calendar.innerHTML = "";
       load_dates(year, m);
     });
+    if(DescargaActi === "none"){
+      btn_download.style.display="none";
+      btn_plot.style.display = "none";
+    }
 
     calendar.appendChild(btn);
 
     estadoPanel = "meses";
     btnBack.style.display = "inline-block";
+
+
   });
 }
 
 async function load_dates(year, rawMonth) {
+  DescargaActi = "Acti";
   console.log("mes: ", rawMonth)
   const onlyMonth = rawMonth.split("-").pop(); // evita duplicación
   const days = await get_days(station.value, rawMonth);
@@ -132,7 +141,7 @@ async function load_dates(year, rawMonth) {
     btn.addEventListener("click", () => {
       console.log("Fecha seleccionada:", fechaCompleta);
       document.getElementById("Fecha").value = fechaCompleta;
-
+      
       get_csv();
       document.getElementById("btn_plot").disabled = false;
       document.getElementById("btn_download").disabled = false;
@@ -140,7 +149,11 @@ async function load_dates(year, rawMonth) {
       const allButtons = calendar.querySelectorAll(".calendar-button");
       allButtons.forEach(b => b.classList.remove("selected-date"));
       btn.classList.add("selected-date");
-
+      if(DescargaActi === "Acti"){
+      btn_download.style.display="inline-block";
+      btn_plot.style.display = "inline-block"
+    }
+  
     });
 
     calendar.appendChild(btn);
@@ -173,9 +186,11 @@ btnBack.addEventListener("click", () => {
     if (añoSeleccionado) {
       load_months(añoSeleccionado);
       estadoPanel = "meses";
+      //btn_download.style.display="inline-block"
     }
   } else if (estadoPanel === "meses") {
     load_years();
     estadoPanel = "años";
+    
   }
 });

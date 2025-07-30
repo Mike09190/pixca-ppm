@@ -23,8 +23,12 @@
         <h1> Sistema de Monitoreo de Partículas </h1>    
      <div id="info_container">
         <div id="info_box">
-            <h2>¿Qué hace esta página?</h2>
-            <p>Esta página permite monitorear las partículas en el aire a través de diferentes estaciones. Puedes seleccionar una estación, elegir fechas disponibles y descargar los datos en formato CSV.</p>
+            
+            <summary><h2 id="Encabezado" >¿Qué hace esta página?</h2></summary>
+            <details>
+                  <summary class="solo-flecha"></summary>
+            <p id="InfoDesple">Esta página permite monitorear las partículas en el aire a través de diferentes estaciones. Puedes seleccionar una estación, elegir fechas disponibles y descargar los datos en formato CSV.</p>
+            </details>
         </div>
         <img src="Imageness/Satandard.jpeg" alt="Descripción" id="right_image" />
     </div>
@@ -56,23 +60,22 @@
                         <select id="sel_month" size="4" style="display:none;"></select>
 
                         <select id="sel_day" size="4" style="display:none;"></select>
-
                    
                     </div>
-            <input type="hidden" id="Fecha" />
+                                    <div class="Botones">
+                <button id="btn_back" style="display:none;">Regresar</button>
+                <a id="csvURL"> <input type="button" style="display: none;" value="Descargar" id="btn_download"/></a>
+
+                    <div id="div_btn" class="div_sel">
+                        <input type="button" style="display: none;" value="Graficar" id="btn_plot"  disabled />
+                    </div>
+                </div>
+                <input type="hidden" id="Fecha" />
             </div>
-
+            
         </div>
 
-            <button id="btn_back" style="display:none;">⬅ Regresar</button>
         
-        <div class="Botones">
-        <a id="csvURL"> <input type="button" value="Descargar" id="btn_download"/></a>
-
-        <div id="div_btn" class="div_sel">
-            <input type="button" value="Graficar" id="btn_plot" disabled />
-        </div>
-        </div>
         <div id="div_plot"></div>
     </body>
 
