@@ -80,11 +80,10 @@ h1 {
 }
 #right_image {
     height: auto;
-    width: 25%; 
+    width: 35%;
     display: flex;
     margin: 3%;
-    position: absolute;
-    right: 0;
+    
 }
 .selecciona {
   font-size: 18px;
@@ -131,7 +130,10 @@ h4{
     padding: 15px;
     border-radius: 5px;
     background-color: #38d5be;
-    width: 50%;
+    width: 33%;
+    position: relative;
+    left: 0%;
+    flex-direction: column;
 }
 button, input[type="button"], input[type="submit"] { 
     width: 100px;
@@ -190,8 +192,14 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 }
 .solo-flecha {
-  width: 20px;        
+  width: 20px;        /* Ajusta según tu diseño */
   height: 20px;
   background: none;
   border: none;
+}
+#contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
 }
