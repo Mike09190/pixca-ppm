@@ -20,22 +20,27 @@
             <img class='logoUNAM' src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1822px-Escudo-UNAM-escalable.svg.png' alt='Logo UNAM'>
         </div>
  
-  <div style="text-align: left; margin: 20px;">
-
-    
-    <h1 style="margin-bottom: 10px;">Sistema de Monitoreo de Partículas</h1>
+ <div style="text-align: left; margin: 20px;">
 
    
-    <button id="helpButton"
-            style="font-size: 16px; border: none; background: none; cursor: pointer;"
-            title="¿Qué es esto?">❓</button>
+    <h1 style="margin-bottom: 10px;">Sistema de Monitoreo de Partículas</h1>
+
+    
+    <button id="helpButton" title="¿Qué es esto?">❓</button>
+
+    <div id="infoBox">
+      Este sistema permite monitorear partículas en tiempo real. Aquí puedes ver datos, gráficas y alertas sobre la calidad del aire y otros parámetros ambientales.
+    </div>
 
   </div>
 
- 
+
   <script>
-    document.getElementById("helpButton").addEventListener("click", function() {
-      alert("Este sistema permite monitorear partículas en tiempo real. Aquí puedes ver datos, gráficas y alertas.");
+    const helpButton = document.getElementById("helpButton");
+    const infoBox = document.getElementById("infoBox");
+
+    helpButton.addEventListener("click", () => {
+      infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
     });
   </script>
 
