@@ -24,7 +24,39 @@ const ImagenesDeEstaciones ={
   "pixca_ppm015": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg"
 };
 
+function mostrarDatosEstacion(estacionId) {
+  const datosSimulados = {
+    "pmpembu20230001": {
+      nombre: "Estación PEMBU 01",
+      ubicacion: "Ciudad Universitaria, CDMX",
+      lat: "19.3321",
+      lon: "-99.1890",
+      altura: "2250"
+    },
+    "pmpembu20230002": {
+      nombre: "Estación PEMBU 02",
+      ubicacion: "Coyoacán, CDMX",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "2240"
+    },
+    // Puedes agregar más estaciones aquí
+  };
 
+  const datos = datosSimulados[estacionId];
+  const infoDiv = document.getElementById("info-estacion");
+
+  if (datos) {
+    infoDiv.innerHTML = `
+      <strong>Nombre:</strong> ${datos.nombre}<br>
+      <strong>Ubicación:</strong> ${datos.ubicacion}<br>
+      <strong>Coordenadas:</strong> ${datos.lat}, ${datos.lon}<br>
+      <strong>Altura:</strong> ${datos.altura} m
+    `;
+  } else {
+    infoDiv.innerHTML = `<em>No hay información disponible para esta estación.</em>`;
+  }
+}
 
 const calendar = document.getElementById("availability-calendar"); //calendario
 if (!calendar) {
@@ -180,6 +212,7 @@ if(ImagenesDeEstaciones[SelecStation])
 {
   img.style.display= "none";
 }
+mostrarDatosEstacion(SelecStation);
 });
 btnBack.addEventListener("click", () => {
   if (estadoPanel === "días") {
