@@ -20,22 +20,25 @@
             <img class='logoUNAM' src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1822px-Escudo-UNAM-escalable.svg.png' alt='Logo UNAM'>
         </div>
  
-<h1> Sistema de Monitoreo de Partículas </h1>    
+  <div style="text-align: left; margin: 20px;">
 
+    
+    <h1 style="margin-bottom: 10px;">Sistema de Monitoreo de Partículas</h1>
 
-<div style="text-align: center; margin-bottom: 20px;">
-    <button id="helpButton" style="font-size: 24px; border: none; background: none; cursor: pointer;">❓</button>
-    <div id="helpText" style="display: none; max-width: 600px; margin: 10px auto; background-color: #f0f0f0; padding: 10px; border-radius: 8px; font-size: 16px;">
-        Esta página permite monitorear las partículas en el aire a través de diferentes estaciones. Puedes seleccionar una estación, elegir fechas disponibles y descargar los datos en formato CSV.
-    </div>
-</div>
+   
+    <button id="helpButton"
+            style="font-size: 16px; border: none; background: none; cursor: pointer;"
+            title="¿Qué es esto?">❓</button>
 
-<script>
+  </div>
+
+ 
+  <script>
     document.getElementById("helpButton").addEventListener("click", function() {
-        const helpText = document.getElementById("helpText");
-        helpText.style.display = helpText.style.display === "none" ? "block" : "none";
+      alert("Este sistema permite monitorear partículas en tiempo real. Aquí puedes ver datos, gráficas y alertas.");
     });
-</script>
+  </script>
+
 
 
         <input type='hidden' name='pm_api'>
