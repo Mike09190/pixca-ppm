@@ -20,29 +20,27 @@
             <img class='logoUNAM' src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1822px-Escudo-UNAM-escalable.svg.png' alt='Logo UNAM'>
         </div>
  
- <div style="text-align: left; margin: 20px;">
+
 
    
     <h1 style="margin-bottom: 10px;">Sistema de Monitoreo de Partículas</h1>
 
-    
-    <button id="helpButton" title="¿Qué es esto?">❓</button>
 
-    <div id="infoBox">
-      Este sistema permite monitorear partículas en tiempo real. Aquí puedes ver datos, gráficas y alertas sobre la calidad del aire y otros parámetros ambientales.
-    </div>
-
-  </div>
+<button id="helpButton" title="¿Qué es esto?" style="font-size: 14px; border: none; background: none; cursor: pointer;">❓</button>
 
 
-  <script>
-    const helpButton = document.getElementById("helpButton");
-    const infoBox = document.getElementById("infoBox");
+<div id="infoBox" style="display: none; margin-top: 10px; padding: 10px; background-color: #f0f8ff; border-left: 3px solid #007BFF; max-width: 400px; font-size: 14px; color: #333;">
+  Este sistema permite monitorear partículas en tiempo real. Aquí puedes ver datos, gráficas y alertas sobre la calidad del aire y otros parámetros ambientales.
+</div>
 
-    helpButton.addEventListener("click", () => {
-      infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
-    });
-  </script>
+<script>
+  const helpButton = document.getElementById("helpButton");
+  const infoBox = document.getElementById("infoBox");
+
+  helpButton.addEventListener("click", () => {
+    infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
+  });
+</script>
 
 
 
