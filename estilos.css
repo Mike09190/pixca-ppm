@@ -192,7 +192,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 }
 .solo-flecha {
-  width: 20px;        /* Ajusta según tu diseño */
+  width: 20px;       
   height: 20px;
   background: none;
   border: none;
@@ -204,8 +204,8 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   gap: 20px;
 }
 #info-estacion {
-  background-color: #7b2cbf1a; /* morado suave translúcido */
-  border-left: 4px solid #1dd4bb; /* acento morado */
+  background-color: #7b2cbf1a; 
+  border-left: 4px solid #1dd4bb; 
   padding: 15px;
   margin: 10px 0;
   width: 100%;
