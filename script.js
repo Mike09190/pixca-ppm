@@ -35,12 +35,62 @@ function mostrarDatosEstacion(estacionId) {
     },
     "pmpembu20230002": {
       nombre: "Estación PEMBU 02",
-      ubicacion: "Coyoacán, CDMX",
+      ubicacion: "Sipirili",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "777"
+    },
+     "pmpembu20230003": {
+      nombre: "Estación PEMBU 03",
+      ubicacion: "Papulandia",
       lat: "19.3432",
       lon: "-99.1612",
       altura: "2240"
     },
-    // Puedes agregar más estaciones aquí
+     "pmpembu20230004": {
+      nombre: "Estación PEMBU 04",
+      ubicacion: "Nogales, Sonora",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "2240"
+    },
+     "pmpembu20230005": {
+      nombre: "Estación PEMBU 05",
+      ubicacion: "Tlaxcala",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "2240"
+    },
+     "pmpembu20230006": {
+      nombre: "Estación PEMBU 06",
+      ubicacion: "Perú",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "2240"
+    },
+     "pixca_ppm012": {
+      nombre: "Estación PEMBU 012",
+      ubicacion: "Zona rosa",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "2240"
+    },
+      "pixca_ppm013": {
+      nombre: "Estación pixca 013",
+      ubicacion: "La Central de abastos",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "666"
+    },
+      "pixca_ppm015": {
+      nombre: "Estación pixca 015",
+      ubicacion: "fantasmas tasqueña",
+      lat: "19.3432",
+      lon: "-99.1612",
+      altura: "5543473610"
+    },
+
+    // Aqui se agregaron las estaciones
   };
 
   const datos = datosSimulados[estacionId];

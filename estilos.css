@@ -203,21 +203,15 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   align-items: flex-start;
   gap: 20px;
 }
-#info-estacion {
-  background-color: #7b2cbf1a; 
-  border-left: 4px solid #1dd4bb; 
-  padding: 15px;
-  margin: 10px 0;
-  width: 100%;
-  font-size: 1em;
-  color: #03050c;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  line-height: 1.6;
-}
-#info-estacion strong {
-  color: #028dff;
-}
-#info-estacion em {
-  color: #555;
+.info-box {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background-color: #f0f8ff;
+  border-left: 3px solid #007BFF;
+  font-size: 14px;
+  color: #333;
+  border-radius: 6px;
+  max-width: 600px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  min-height: 40px; 
 }
