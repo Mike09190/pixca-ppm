@@ -152,6 +152,10 @@ async function load_years() {
       calendar.innerHTML = "";
       load_months(y);
     });
+    if(DescargaActi === "none"){
+      btn_download.style.display="none";
+      btn_plot.style.display = "none";
+    }
     calendar.appendChild(btn);
     estadoPanel = "años";
     btnBack.style.display = "none";
