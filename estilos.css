@@ -165,7 +165,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 }
 #div_plot {
   width: 100%;
-  height: 400px;
+  height: 100%;
   margin-top: 5%;
 
 }
