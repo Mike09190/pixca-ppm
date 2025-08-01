@@ -1,6 +1,7 @@
 html {
   font-family:'Times New Roman', Times, serif; 
-  background: linear-gradient(to bottom right, #e0f7fa, #7b2cbf) 
+  background: linear-gradient(to bottom right, #e0f7fa, #7b2cbf) ;
+  
 }
 body {
   display: flex;
@@ -165,7 +166,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 }
 #div_plot {
   width: 100%;
-  height: 100%;
+  height: 400px;
   margin-top: 5%;
 
 }
