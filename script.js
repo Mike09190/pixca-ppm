@@ -1,3 +1,4 @@
+const btn_plot = document.getElementById("btn_plot"); //declarar los botones y cuadros
 document.getElementById("btn_plot").addEventListener("click", function() {
     document.getElementById("div_plot").scrollIntoView({ behavior: 'smooth' });
   });
