@@ -62,45 +62,42 @@
 
         </div>
 
-<div class="cuadro" style="background-color: #4B0082; padding: 20px; border-radius: 10px; color: white; margin-top: 20px;">
+        <div class="cuadro" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start;">
 
-  <div id="info-estacion" class="info-box" style="
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #f0f8ff;
-    border-left: 3px solid #007BFF;
-    font-size: 14px;
-    color: #333;
-  ">
-    <em>Selecciona una estación para ver sus datos.</em>
-  </div>
 
-  
-  <div id="contenido" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+  <div style="flex: 1;">
+   
+    <div id="info-estacion" class="info-box" style="margin-bottom: 15px; padding: 10px; background-color: #f0f8ff; border-left: 3px solid #007BFF; font-size: 14px; color: #333;">
+      <em>Selecciona una estación para ver sus datos.</em>
+    </div>
 
-    <div style="flex: 1; min-width: 300px;">
-      <div id="availability-calendar-container">
-        <h3>Fechas Disponibles:</h3>
-        <div id="availability-calendar">
-          <select id="sel_year" size="4"></select>
-          <select id="sel_month" size="4" style="display:none;"></select>
-          <select id="sel_day" size="4" style="display:none;"></select>
-        </div>
+    
+    <div id="availability-calendar-container">
+      <h3>Fechas Disponibles:</h3>
+      <div id="availability-calendar">
+        <select id="sel_year" size="4"></select>
+        <select id="sel_month" size="4" style="display:none;"></select>
+        <select id="sel_day" size="4" style="display:none;"></select>
+      </div>
 
-        <div class="Botones" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-          <button id="btn_back" style="display:none;">Regresar</button>
+      <div class="Botones">
+        <button id="btn_back" style="display:none;">Regresar</button>
+        <a id="csvURL">
           <input type="button" style="display: none;" value="Descargar" id="btn_download"/>
+        </a>
+
+        <div id="div_btn" class="div_sel">
           <input type="button" style="display: none;" value="Graficar" id="btn_plot" disabled />
         </div>
-
-        <input type="hidden" id="Fecha" />
       </div>
-    </div>
 
-   
-    <div style="flex: 1; min-width: 300px;">
-      <img src="Imageness/Satandard.jpeg" alt="Descripción" id="right_image" style="max-width: 100%; height: auto; border-radius: 8px;" />
+      <input type="hidden" id="Fecha" />
     </div>
+  </div>
+
+
+  <div style="flex: 1;">
+    <img src="Imageness/Satandard.jpeg" alt="Descripción" id="right_image" style="max-width: 100%; height: auto;" />
   </div>
 </div>
         
