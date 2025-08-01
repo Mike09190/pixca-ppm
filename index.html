@@ -61,39 +61,45 @@
             </select> </label>
 
         </div>
-   <div class="cuadro">
 
-  <div id="info-estacion" class="info-box" style="margin-bottom: 15px; padding: 10px; background-color: #f0f8ff; border-left: 3px solid #007BFF; font-size: 14px; color: #333;">
-    <em>Selecciona una estación para ver sus datos.</em>
-  </div>
+        <div class="cuadro" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start;">
 
 
-  <div id="availability-calendar-container">
-    <h3>Fechas Disponibles:</h3>
-    <div id="availability-calendar">
-      <select id="sel_year" size="4"></select>
-      <select id="sel_month" size="4" style="display:none;"></select>
-      <select id="sel_day" size="4" style="display:none;"></select>
+  <div style="flex: 1;">
+   
+    <div id="info-estacion" class="info-box" style="margin-bottom: 15px; padding: 10px; background-color: #f0f8ff; border-left: 3px solid #007BFF; font-size: 14px; color: #333;">
+      <em>Selecciona una estación para ver sus datos.</em>
     </div>
 
-    <div class="Botones">
-      <button id="btn_back" style="display:none;">Regresar</button>
-      <a id="csvURL">
-        <input type="button" style="display: none;" value="Descargar" id="btn_download"/>
-      </a>
-
-      <div id="div_btn" class="div_sel">
-        <input type="button" style="display: none;" value="Graficar" id="btn_plot" disabled />
+    
+    <div id="availability-calendar-container">
+      <h3>Fechas Disponibles:</h3>
+      <div id="availability-calendar">
+        <select id="sel_year" size="4"></select>
+        <select id="sel_month" size="4" style="display:none;"></select>
+        <select id="sel_day" size="4" style="display:none;"></select>
       </div>
-    </div>
 
-    <input type="hidden" id="Fecha" />
+      <div class="Botones">
+        <button id="btn_back" style="display:none;">Regresar</button>
+        <a id="csvURL">
+          <input type="button" style="display: none;" value="Descargar" id="btn_download"/>
+        </a>
+
+        <div id="div_btn" class="div_sel">
+          <input type="button" style="display: none;" value="Graficar" id="btn_plot" disabled />
+        </div>
+      </div>
+
+      <input type="hidden" id="Fecha" />
+    </div>
   </div>
 
- 
-  <img src="Imageness/Satandard.jpeg" alt="Descripción" id="right_image" />
-</div>
 
+  <div style="flex: 1;">
+    <img src="Imageness/Satandard.jpeg" alt="Descripción" id="right_image" style="max-width: 100%; height: auto;" />
+  </div>
+</div>
         
         <div id="div_plot"></div>
     </body>
