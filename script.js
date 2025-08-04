@@ -73,7 +73,7 @@ function mostrarDatosEstacion(estacionId) {
     },
      "pixca_ppm012": {
       nombre: "Estación PEMBU 012",
-      ubicacion: "Zona rosa",
+      ubicacion: "Ciudad Peluche",
       lat: "19.3432",
       lon: "-99.1612",
       altura: "2240"
@@ -101,10 +101,12 @@ function mostrarDatosEstacion(estacionId) {
 
   if (datos) {
     infoDiv.innerHTML = `
-      <strong>Nombre:</strong> ${datos.nombre}<br>
-      <strong>Ubicación:</strong> ${datos.ubicacion}<br>
-      <strong>Coordenadas:</strong> ${datos.lat}, ${datos.lon}<br>
-      <strong>Altura:</strong> ${datos.altura} m
+       <div style="text-align: center; font-size: 1.5em; font-weight: bold; margin-bottom: 10px;">
+    ${datos.nombre}
+  </div>
+  <strong>Ubicación:</strong> ${datos.ubicacion}<br>
+  <strong>Coordenadas:</strong> ${datos.lat}, ${datos.lon}<br>
+  <strong>Altura:</strong> ${datos.altura} m
     `;
   } else {
     infoDiv.innerHTML = `<em>No hay información disponible para esta estación.</em>`;
