@@ -217,7 +217,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   min-height: 40px; 
 }
 #infoBox {
-  position: relative;
+  position: fixed;
   top: 130px; 
   left: 20px;
   z-index: 1000;
