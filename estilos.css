@@ -179,6 +179,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   margin: .5%;
   display: flex;
   background-color: #7b2cbf;
+  font-size: .9em;
 }
 #btn_plot {
   background-color: #7b2cbf;
@@ -237,4 +238,5 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   padding: 1%;
   margin: 1%;
   width:10%;
+  
 }
