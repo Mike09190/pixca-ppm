@@ -37,9 +37,16 @@
 <script>
   const helpButton = document.getElementById("helpButton");
   const infoBox = document.getElementById("infoBox");
+  const closeHelp = document.getElementById("closeHelp");
 
   helpButton.addEventListener("click", () => {
-    infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
+    infoBox.style.display = "block";
+    helpButton.style.display = "none"; // opcional: oculta el botón 
+  });
+
+  closeHelp.addEventListener("click", () => {
+    infoBox.style.display = "none";
+    helpButton.style.display = "inline-block"; // opcional: vuelve a mostrar el botón 
   });
 </script>
 
