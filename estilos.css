@@ -217,8 +217,8 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   min-height: 40px; 
 }
 #infoBox {
-  position: absolute;
-  top: 100%; 
+  position: fixed;
+  top: 27.5%; 
   left: 0;
   z-index: 1000;
   display: none;
@@ -230,4 +230,11 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   color: #333;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
+  background:linear-gradient(to bottom right, #e0f7fa, #7b2cbf) ;
+
+}
+#closeHelp{
+  padding: 1%;
+  margin: 1%;
+  width:10%;
 }
