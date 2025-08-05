@@ -218,8 +218,8 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   min-height: 40px; 
 }
 #infoBox {
-  position: fixed;
-  top: 27.5%; 
+  position: absolute;
+  top: 28.5%; 
   left: 0;
   z-index: 1000;
   display: none;
