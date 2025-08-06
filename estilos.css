@@ -94,7 +94,8 @@ h1 {
   appearance: menulist-button;
   border: 1px solid #ccc; 
   padding: 5%;
-   color: var(--text-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease-in-out;
 }
 
 select {
@@ -133,6 +134,7 @@ h4{
   display: flex;
   justify-content: center;
   background: var(--cuadro-bg);
+  transition: background-color 0.5s ease-in-out;
 }
 .mensaje-estacion {
   background-color: var(--mensaje-bg);
