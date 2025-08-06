@@ -37,7 +37,6 @@
   function applyTheme(theme) {
     root.className = '';
     root.classList.add(`theme-${theme}`);
-    localStorage.setItem('selectedTheme', theme);
   }
 
   selector.addEventListener('change', (e) => {
@@ -45,12 +44,10 @@
   });
 
   window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
-    selector.value = savedTheme;
-    applyTheme(savedTheme);
+    selector.value = 'default';     
+    applyTheme('default');          
   });
-</script>  
-  
+</script>
 
     <header>
       <h1 style="margin-bottom: 10px;">Sistema de Monitoreo de Partículas</h1>
