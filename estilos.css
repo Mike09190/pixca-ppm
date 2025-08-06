@@ -1,7 +1,7 @@
 html {
   font-family:'Times New Roman', Times, serif; 
-   background: var(--bg-gradient); ;
-  
+   background: var(--bg-gradient); 
+   transition: background-color 0.5s ease-in-out;
 }
 body {
   display: flex;
@@ -150,6 +150,7 @@ h4{
     left: 0%;
     flex-direction: column;
     color: var(--text-color);
+    transition: background-color 0.5s ease-in-out;
 }
 button, input[type="button"], input[type="submit"] { 
   width: 100px;
@@ -282,7 +283,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 .theme-dark {
   --bg-gradient: linear-gradient(to bottom right, #1e1e1e, #3a3a3a);
-   --cuadro-bg: linear-gradient(to bottom right, #ccc3c3, #837e7e);
+   --cuadro-bg: linear-gradient(to bottom right, #ddd5d5, #9e9292);
   --mensaje-bg: #2c2c2c;
   --mensaje-color: #ffffff;
   --box-bg: #2c2c2c;
