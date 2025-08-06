@@ -274,7 +274,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 .theme-default {
   --bg-gradient: linear-gradient(to bottom right, #e0f7fa, #7b2cbf);
-  --menu-bg:#4b1d6f;
+  --menu-bg:#7b2cbf;
   --cuadro-bg: linear-gradient(to bottom right, #4b1d6f, #2e0a4d);
   --mensaje-bg: #7b2cbf;
   --mensaje-color: #000000;
@@ -286,7 +286,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 .theme-dark {
   --bg-gradient: linear-gradient(to bottom right, #1e1e1e, #3a3a3a);
-  --menu-bg:#9e9292;
+  --menu-bg:#ff4081;
   --cuadro-bg: linear-gradient(to bottom right, #ddd5d5, #9e9292);
   --mensaje-bg: #ff4081;
   --mensaje-color: #ffffff;
@@ -298,7 +298,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 .theme-solarized {
   --bg-gradient: linear-gradient(to bottom right, #fdf6e3, #b58900);
-   --menu-bg:#b58900;
+   --menu-bg:#cb4b16;
   --cuadro-bg: linear-gradient(to bottom right, #b58900, #7c5e00);
   --mensaje-bg: #cb4b16;
   --mensaje-color: #ffffff;
@@ -310,7 +310,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 .theme-neon {
   --bg-gradient: linear-gradient(to bottom right, #0f0f0f, #39ff14);
-   --menu-bg:#990066;
+   --menu-bg:#ff00ff;
   --cuadro-bg: linear-gradient(to bottom right, #990066, #220044);
   --mensaje-bg:#ff00ff;
   --mensaje-color: #ffffff;
