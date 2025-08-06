@@ -1,6 +1,6 @@
 html {
   font-family:'Times New Roman', Times, serif; 
-  background: linear-gradient(to bottom right, #e0f7fa, #7b2cbf) ;
+   background: var(--bg-gradient); ;
   
 }
 body {
@@ -50,27 +50,28 @@ body {
   filter: invert(1);
 }
 h1 {
-  font-size: 4vw; 
-  color: rgb(3, 4, 4); 
-   
+   font-size: 4vw; 
+  color: var(--text-color); 
   text-align: center;
-  margin:20px;
+  margin: 20px;
 }
+
 #info_box {
-    background-color: #38d5be; 
-    padding: 2%; 
-    margin: 3%; 
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
-    width: 50%; 
-    max-width: 50%; 
+  background-color: var(--box-bg); 
+  padding: 2%; 
+  margin: 3%; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+  width: 50%; 
+  max-width: 50%; 
+  color: var(--text-color);
 }
 #info_box h2 {
     font-size: 2em; 
-    color: #968b04; 
+    color:  var(--accent);; 
     margin-bottom: 5%; 
 }
 #info_box p {
-    color: #03050c; 
+    color: var(--text-color); 
     line-height: 1.5; 
 }
 #info_container {
@@ -89,22 +90,27 @@ h1 {
 .selecciona {
   font-size: 18px;
   margin: 3%;
-  background-color: #fffefeb6; 
+  background-color: var(--info-bg); 
   appearance: menulist-button;
   border: 1px solid #ccc; 
   padding: 5%;
+   color: var(--text-color);
 }
+
 select {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   appearance: none; 
   align-items: center;
+  background-color: var(--info-bg);
+  color: var(--text-color);
 }
+
 h3 {
     font-size: 1.8em;
     text-align: center;
-    color: #333;
+    color:var(--text-color);
     margin: 3%;
 }
 h4{
@@ -112,6 +118,7 @@ h4{
    width: 70%;
   font-size: 1.3em;
   margin: 2%;
+  color: var(--text-color);
 }
 .div_sel {
   font-size: 1.8em;
@@ -119,29 +126,31 @@ h4{
   align-items: center;
   justify-content: center; 
   margin-bottom: 3%; 
+  color: var(--text-color);
 }
 .cuadro {
   padding: 2px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(to bottom right, #9659cb, #a7249e)
+  background: var(--bg-gradient);
 }
 #availability-calendar-container {
     margin: 5px;
     padding: 15px;
     border-radius: 5px;
-    background-color: #38d5be;
+    background-color: var(--box-bg);
     width: 86%;
     position: relative;
     left: 0%;
     flex-direction: column;
+    color: var(--text-color);
 }
 button, input[type="button"], input[type="submit"] { 
-    width: 100px;
+  width: 100px;
   justify-content: center;
   font-size: 16px;
-  background-color: #00b09b;
-  color: #fff;
+  background-color: var(--accent);
+  color: var(--text-color);
   border-style: solid;
   border-color: #01887854;
   padding: 10px 20px;
@@ -151,72 +160,82 @@ button, input[type="button"], input[type="submit"] {
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
-  background-color:rgb(147, 227, 207);
+  background-color: var(--box-bg);
 }
+
 button:active, input[type="button"]:active, input[type="submit"]:active { 
-  background-color:rgb(124, 11, 194);
+  background-color: var(--accent);
 }
+
 button::marker, input[type="button"]::marker, input[type="submit"]::marker { 
-  background-color:rgb(124, 11, 194);
+  background-color: var(--accent);
 }
+
 .Botones {
   display: flex;
   justify-content: space-between;
   margin: 1%;
 }
+
 #div_plot {
   width: 100%;
   height: 400px;
   margin-top: 5%;
-
 }
+
 #div_btn {
   display: flex;
-  
 }
 
 #btn_download {
   margin: .5%;
   display: flex;
-  background-color: #7b2cbf;
+  background-color: var(--accent);
   font-size: .9em;
+  color: var(--text-color);
 }
+
 #btn_plot {
-  background-color: #7b2cbf;
+  background-color: var(--accent);
+  color: var(--text-color);
 }
+
 #btn_back {
   display: grid;
   justify-content: center;
-    align-items: center;
-
+  align-items: center;
   width: 100px;
-  background-color: #7b2cbf;
-
+  background-color: var(--accent);
+  color: var(--text-color);
 }
+
 .solo-flecha {
   width: 20px;       
   height: 20px;
   background: none;
   border: none;
 }
+
 #contenido {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
 }
+
 .info-box {
   margin-bottom: 15px;
   padding: 10px 15px;
-  background-color: #f0f8ff;
-  border-left: 3px solid #007BFF;
+  background-color: var(--info-bg);
+  border-left: 3px solid var(--accent);
   font-size: 14px;
-  color: #333;
+  color: var(--text-color);
   border-radius: 6px;
   max-width: 600px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   min-height: 40px; 
 }
+
 #infoBox {
   position: absolute;
   top: 28.5%; 
@@ -224,19 +243,75 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   z-index: 1000;
   display: none;
   padding: 10px;
-  background-color: #f0f8ff;
-  border-left: 3px solid #007BFF;
+  background-color: var(--info-bg);
+  border-left: 3px solid var(--accent);
   max-width: 400px;
   font-size: 14px;
-  color: #333;
+  color: var(--text-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  background:linear-gradient(to bottom right, #e0f7fa, #7b2cbf) ;
-
+  background: var(--bg-gradient);
 }
-#closeHelp{
+
+#closeHelp {
   padding: 1%;
   margin: 1%;
-  width:10%;
-  
+  width: 10%;
+  background-color: var(--accent);
+  color: var(--text-color);
+}
+
+/* === TEMAS PERSONALIZADOS === */
+
+.theme-default {
+  --bg-gradient: linear-gradient(to bottom right, #e0f7fa, #7b2cbf);
+  --box-bg: #38d5be;
+  --accent: #7b2cbf;
+  --info-bg: #f0f8ff;
+  --text-color: #03050c;
+}
+
+.theme-dark {
+  --bg-gradient: linear-gradient(to bottom right, #1e1e1e, #3a3a3a);
+  --box-bg: #2c2c2c;
+  --accent: #ff4081;
+  --info-bg: #333;
+  --text-color: #f5f5f5;
+}
+
+.theme-solarized {
+  --bg-gradient: linear-gradient(to bottom right, #fdf6e3, #b58900);
+  --box-bg: #eee8d5;
+  --accent: #cb4b16;
+  --info-bg: #fdf6e3;
+  --text-color: #657b83;
+}
+
+.theme-neon {
+  --bg-gradient: linear-gradient(to bottom right, #0f0f0f, #39ff14);
+  --box-bg: #1a1a1a;
+  --accent: #ff00ff;
+  --info-bg: #0f0f0f;
+  --text-color: #39ff14;
+}
+#theme-menu {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  background-color: var(--info-bg);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+#theme-menu select {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: var(--box-bg);
+  color: var(--text-color);
+  font-size: 14px;
 }
