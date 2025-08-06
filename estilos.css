@@ -277,7 +277,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   --mensaje-color: #000000;
   --box-bg: #38d5be;
   --accent: #7b2cbf;
-  --info-bg: #f0f8ff;
+  --info-bg: #38d5be;
   --text-color: #03050c;
 }
 
