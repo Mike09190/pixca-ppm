@@ -213,20 +213,23 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   display: flex;
   font-size: .9em;
   color: var(--text-color);
-  width: 91.7 ;
-  height: 67%;
+  width: fit-content ;
+  height: fit-content;
 }
 
 #btn_plot {
   background-color: var(--accent);
   color: var(--text-color);
+  width:fit-content;
+  height: fit-content;
 }
 
 #btn_back {
   display: grid;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  width: fit-content;
+  height: fit-content;
   background-color: var(--accent);
   color: var(--text-color);
 }
