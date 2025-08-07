@@ -284,3 +284,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   background-color: var(--accent);
   color: var(--text-color);
 }
+#helpButton{
+  position: fixed;
+  left: 0%;
+}
