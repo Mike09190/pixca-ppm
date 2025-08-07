@@ -1,14 +1,14 @@
 
 :root{
-    --fondo-principal: linear-gradient(to right, #edd2b6, #ede8f1); ;
-    --fondoCuadro: linear-gradient(to right, #b267eb, #020003);
-    --TextoEsta: rgb(223, 79, 79);
-    --infoBox: white;
-    --Calendario: white;
-    --text-color: rgba(0, 128, 0, 0.663);
-    --fondoMain: linear-gradient(to right, #ba86e1, #8e23ec); 
-    --Boton: white;
-    --BotonSelect: rgb(90, 152, 90);
+    --fondo-principal: linear-gradient(to right, #f5e9dd, #ede8f1); /*fondo de la grafica */
+    --fondoCuadro: linear-gradient(to right, #b267eb, #020003); /* fondo de cuadro de calendario en informacion */
+    --TextoEsta: rgba(77, 146, 48, 0.68); /*texto de palabra estacion */
+    --infoBox: white; /* cuadro de informacion */
+    --Calendario: white; /* calendario */
+    --text-color: rgba(0, 128, 0, 0.663); /* color de todo el texto */
+    --fondoMain: linear-gradient(to right, #ba86e1, #8e23ec);  /* color de la parte superior */
+    --Boton: white; /* color de los botones */
+    --BotonSelect: rgb(90, 152, 90); /* color del boton al seleccionar */
 }
 html {
   font-family:'Times New Roman', Times, serif; 
