@@ -184,6 +184,8 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   display: flex;
   justify-content: space-between;
   margin: 1%;
+  height:100%;
+  width:100%;
 }
 
 #div_plot {
@@ -197,7 +199,8 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 }
 
 #btn_download {
-  margin: .5%;
+  width:91.7%
+  height:67%
   display: flex;
   background-color: var(--accent);
   font-size: .9em;
@@ -210,10 +213,11 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 }
 
 #btn_back {
+  
   display: grid;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 20%;
   background-color: var(--accent);
   color: var(--text-color);
 }
@@ -247,7 +251,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 
 #infoBox {
   position: absolute;
-  top: 28.5%; 
+  top: 30.5%; 
   left: 0;
   z-index: 1000;
   display: none;
