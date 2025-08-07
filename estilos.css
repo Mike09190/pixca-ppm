@@ -287,4 +287,5 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 #helpButton{
   position: fixed;
   left: 0%;
+  bottom: 74%;
 }
