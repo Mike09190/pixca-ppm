@@ -1,12 +1,26 @@
+
+:root{
+    --fondo-principal: linear-gradient(to right, #edd2b6, #ede8f1); ;
+    --fondoCuadro: linear-gradient(to right, #b267eb, #020003);
+    --TextoEsta: rgb(223, 79, 79);
+    --infoBox: white;
+    --Calendario: white;
+    --text-color: rgba(0, 128, 0, 0.663);
+    --fondoMain: linear-gradient(to right, #ba86e1, #8e23ec); 
+    --Boton: white;
+    --BotonSelect: rgb(90, 152, 90);
+}
 html {
   font-family:'Times New Roman', Times, serif; 
-   background: var(--bg-gradient); 
    transition: background-color 0.5s ease-in-out;
+    background: var(--fondo-principal);
+}
+main{
+  background: var(--fondoMain);
 }
 body {
   display: flex;
   flex-direction: column;
-
   margin:0;
 }
 #div_header {
@@ -57,7 +71,7 @@ h1 {
 }
 
 #info_box {
-  background-color: var(--box-bg); 
+  
   padding: 2%; 
   margin: 3%; 
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
@@ -67,7 +81,6 @@ h1 {
 }
 #info_box h2 {
     font-size: 2em; 
-    color:  var(--accent);; 
     margin-bottom: 5%; 
 }
 #info_box p {
@@ -90,7 +103,6 @@ h1 {
 .selecciona {
   font-size: 18px;
   margin: 3%;
-  background-color: var(--info-bg); 
   appearance: menulist-button;
   border: 1px solid #ccc; 
   padding: 5%;
@@ -104,7 +116,6 @@ select {
   border-radius: 5px;
   appearance: none; 
   align-items: center;
-  background-color: var(--info-bg);
   color: var(--text-color);
 }
 
@@ -127,17 +138,17 @@ h4{
   align-items: center;
   justify-content: center; 
   margin-bottom: 3%; 
-  color: var(--text-color);
+  color: var(--TextoEsta);
 }
 .cuadro {
   padding: 2px;
   display: flex;
   justify-content: center;
-  background: var(--cuadro-bg);
+  background: var(--fondoCuadro);
   transition: background-color 0.5s ease-in-out;
 }
 .mensaje-estacion {
-  background-color: var(--mensaje-bg);
+  
   color: var(--mensaje-color);
   border-radius: 8px;
   transition: background-color 0.5s ease-in-out;
@@ -146,7 +157,7 @@ h4{
     margin: 5px;
     padding: 15px;
     border-radius: 5px;
-    background-color: var(--box-bg);
+    background-color: var(--Calendario);
     width: 86%;
     position: relative;
     left: 0%;
@@ -158,8 +169,7 @@ button, input[type="button"], input[type="submit"] {
   width: 100px;
   justify-content: center;
   font-size: 16px;
-  background-color: var(--accent);
-  color: var(--text-color);
+  background-color: var(--Boton);
   border-style: solid;
   border-color: #01887854;
   padding: 10px 20px;
@@ -169,29 +179,30 @@ button, input[type="button"], input[type="submit"] {
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
-  background-color: var(--box-bg);
+  background-color: var(--BotonSelect);
 }
 
 button:active, input[type="button"]:active, input[type="submit"]:active { 
-  background-color: var(--accent);
+  background-color: var(--BotonSelect);
 }
 
 button::marker, input[type="button"]::marker, input[type="submit"]::marker { 
-  background-color: var(--accent);
+  background-color: var(--BotonSelect);
 }
 
 .Botones {
   display: flex;
   justify-content: space-between;
   margin: 1%;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
 }
 
 #div_plot {
   width: 100%;
   height: 400px;
   margin-top: 5%;
+  
 }
 
 #div_btn {
@@ -199,12 +210,11 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 }
 
 #btn_download {
-  width:91.7%
-  height:67%
   display: flex;
-  background-color: var(--accent);
   font-size: .9em;
   color: var(--text-color);
+  width: 91.7 ;
+  height: 67%;
 }
 
 #btn_plot {
@@ -213,7 +223,6 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 }
 
 #btn_back {
-  
   display: grid;
   justify-content: center;
   align-items: center;
@@ -239,7 +248,7 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
 .info-box {
   margin-bottom: 15px;
   padding: 10px 15px;
-  background-color: var(--info-bg);
+  background-color: var(--infoBox);
   border-left: 3px solid var(--accent);
   font-size: 14px;
   color: var(--text-color);
@@ -256,14 +265,13 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   z-index: 1000;
   display: none;
   padding: 10px;
-  background-color: var(--info-bg);
-  border-left: 3px solid var(--accent);
+  background-color: var(--infoBox);
   max-width: 400px;
   font-size: 14px;
   color: var(--text-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  background: var(--bg-gradient);
+
 }
 
 #closeHelp {
@@ -272,78 +280,4 @@ button::marker, input[type="button"]::marker, input[type="submit"]::marker {
   width: 10%;
   background-color: var(--accent);
   color: var(--text-color);
-}
-
-/* === TEMAS PERSONALIZADOS === */
-
-.theme-default {
-  --bg-gradient: linear-gradient(to bottom right, #e0f7fa, #7b2cbf);
-  --menu-bg:#7b2cbf;
-  --cuadro-bg: linear-gradient(to bottom right, #4b1d6f, #2e0a4d);
-  --mensaje-bg: #7b2cbf;
-  --mensaje-color: #000000;
-  --box-bg: #38d5be;
-  --accent: #7b2cbf;
-  --info-bg: #38d5be;
-  --text-color: #03050c;
-}
-
-.theme-dark {
-  --bg-gradient: linear-gradient(to bottom right, #1e1e1e, #3a3a3a);
-  --menu-bg:#ff4081;
-  --cuadro-bg: linear-gradient(to bottom right, #ddd5d5, #9e9292);
-  --mensaje-bg: #ff4081;
-  --mensaje-color: #ffffff;
-  --box-bg: #f08800;
-  --accent: #ff4081;
-  --info-bg:#f08800;
-  --text-color: #f5f5f5;
-}
-
-.theme-solarized {
-  --bg-gradient: linear-gradient(to bottom right, #fdf6e3, #b58900);
-   --menu-bg:#cb4b16;
-  --cuadro-bg: linear-gradient(to bottom right, #b58900, #7c5e00);
-  --mensaje-bg: #cb4b16;
-  --mensaje-color: #ffffff;
-  --box-bg: #eee8d5;
-  --accent: #cb4b16;
-  --info-bg: #fdf6e3;
-  --text-color: #657b83;
-}
-
-.theme-neon {
-  --bg-gradient: linear-gradient(to bottom right, #0f0f0f, #39ff14);
-   --menu-bg:#ff00ff;
-  --cuadro-bg: linear-gradient(to bottom right, #990066, #220044);
-  --mensaje-bg:#ff00ff;
-  --mensaje-color: #ffffff;
-  --box-bg: #1a1a1a;
-  --accent: #ff00ff;
-  --info-bg: #0f0f0f;
-  --text-color: #39ff14;
-}
-/*aqui esta el menú de temas*/
-#theme-menu {
-  position: absolute;
-  top: 110px;
-  right: 0.5px;
-  z-index: 1000;
-  background-color: var(--menu-bg);
-  padding: 8px 12px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-size: 14px;
-  color: var(--text-color);
-  transition: background-color 0.5s ease-in-out;
-}
-
-#theme-menu select {
-  padding: 6px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: var(--box-bg);
-  color: var(--text-color);
-  font-size: 14px;
-  transition: background-color 0.5s ease-in-out;
 }

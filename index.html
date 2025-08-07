@@ -19,36 +19,8 @@
             <img class='logoICA' src='https://www.atmosfera.unam.mx/wp-content/uploads/2024/05/Recurso-4@2x.png' alt='Logo ICAyCC' >
             <img class='logoUNAM' src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1822px-Escudo-UNAM-escalable.svg.png' alt='Logo UNAM'>
         </div>
-    
-        <div id="theme-menu">
-  <label for="theme-selector">🎨 Tema:</label>
-  <select id="theme-selector">
-    <option value="default">Claro</option>
-    <option value="dark">Oscuro</option>
-    <option value="solarized">Solarizado</option>
-    <option value="neon">Neón</option>
-  </select>
 </div>
-
-<script>
-  const selector = document.getElementById('theme-selector');
-  const root = document.documentElement;
-
-  function applyTheme(theme) {
-    root.className = '';
-    root.classList.add(`theme-${theme}`);
-  }
-
-  selector.addEventListener('change', (e) => {
-    applyTheme(e.target.value);
-  });
-
-  window.addEventListener('DOMContentLoaded', () => {
-    selector.value = 'default';     
-    applyTheme('default');          
-  });
-</script>
-
+<main>
     <header>
       <h1 style="margin-bottom: 10px;">Sistema de Monitoreo de Partículas</h1>
       <button id="helpButton" title="¿Qué es esto?" style="font-size: 14px; border: none; background: none; cursor: pointer; margin: 0%; padding: 0%; position: absolute; top:24%">❓</button>
@@ -94,12 +66,9 @@
             </select> </label>
 
         </div>
-
+        </main>
         <div class="cuadro" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start;">
-
-
   <div style="flex: 1;">
-    
     <div id="info-estacion" class="info-box mensaje-estacion" style="margin-bottom: 15px; padding: 15px; width: 86%; font-size: 1.23em;">
   Selecciona una estación para ver sus datos.
    </div>
