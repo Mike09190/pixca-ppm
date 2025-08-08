@@ -166,14 +166,14 @@ h4{
     transition: background-color 0.5s ease-in-out;
 }
 button, input[type="button"], input[type="submit"] { 
-  width: 100px;
+  width: 12%;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
   background-color: var(--Boton);
   border-style: solid;
   border-color: #01887854;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 4px;
   cursor: pointer;
   transition: background-color .5s ease;
 }
