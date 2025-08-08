@@ -35,7 +35,7 @@ body {
   justify-content: center;
 }
 .logoPembu{
-  height: 30%;
+  height: 10%;
   max-width: 20%;
 
   display: flex;
@@ -53,7 +53,7 @@ body {
   display: flex;
 }
 .logoUNAM {
-  height: 30%;
+  height: 10%;
   max-width: 20%;
   
   display: flex;
