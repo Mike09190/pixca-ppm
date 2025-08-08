@@ -36,7 +36,7 @@ body {
 }
 .logoPembu{
   height: 10%;
-  max-width: 10%;
+  max-width: 20%;
 
   display: flex;
 
@@ -46,7 +46,7 @@ body {
 }
 .logoICA {
 
-  max-width: 50%;
+  max-width: 80%;
   height: 80%;
 
   
@@ -54,7 +54,7 @@ body {
 }
 .logoUNAM {
   height: 11%;
-  max-width: 9%;
+  max-width: 20%;
   
   display: flex;
   position: absolute;
