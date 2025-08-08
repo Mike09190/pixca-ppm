@@ -286,64 +286,7 @@ async function load_dates(year, rawMonth) {
     calendar.appendChild(btn);
   }
 
-  estadoPanel = "dias";
+  estadoPanel = "días";
   btnBack.style.display = "inline-block";
-  actualizarTextoBoton(); // si usas texto dinámico
+ // si usas texto dinámico
 }
-
-
-
-
-btn_plot.addEventListener("click", plot);
-station.addEventListener("change", load_years);
-
-station.addEventListener("change", () => {load_years();
-const SelecStation = station.value;
-const img= document.getElementById("right_image");
-
-if(ImagenesDeEstaciones[SelecStation])
-{
-  img.src= ImagenesDeEstaciones[SelecStation];
-  img.style.display="block";
-}else
-{
-  img.style.display= "none";
-}
-mostrarDatosEstacion(SelecStation);
-});
-btnBack.addEventListener("click", () => {
-  if (estadoPanel === "días") {
-    if (añoSeleccionado) {
-      load_months(añoSeleccionado);
-      estadoPanel = "meses";
-      //btn_download.style.display="inline-block"
-    }
-  } else if (estadoPanel === "meses") {
-    load_years();
-    estadoPanel = "años";
-    
-  }
-});
-
-document.getElementById("helpButton").addEventListener("click", () => {
-  const infoBox = document.getElementById("infoBox");
-  infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
-});
-
-document.getElementById("closeHelp").addEventListener("click", () => {
-  document.getElementById("infoBox").style.display = "none";
-});
-
-  const helpButton = document.getElementById("helpButton");
-  const infoBox = document.getElementById("infoBox");
-  const closeHelp = document.getElementById("closeHelp");
-
-  helpButton.addEventListener("click", () => {
-    infoBox.style.display = "block";
-    helpButton.style.display = "none"; 
-  });
-
-  closeHelp.addEventListener("click", () => {
-    infoBox.style.display = "none";
-    helpButton.style.display = "inline-block"; 
-  });
