@@ -14,6 +14,12 @@ let mesSeleccionado = null;
 const btnBack = document.getElementById("btn_back");
 let DescargaActi = null;
 
+const nombresMeses = [
+  "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+];
+
+
 
 const ImagenesDeEstaciones ={
   "pmpembu20230001": "https://i.pinimg.com/736x/91/1e/61/911e61e3631fe0a489bf72070ae314b5.jpg",
@@ -172,87 +178,119 @@ async function load_months(year) {
   DescargaActi = "none";
   console.log('Año:', year);
   console.log('Estación:', station.value);
+
   const monthsRaw = await get_months(station.value, year);
-  calendar.innerHTML = "";
   añoSeleccionado = year;
-  const months = monthsRaw.filter(m => {
-    return (
-      !m.includes(".txt") &&
-      !m.includes(".tar.gz") &&
-      /^(\d{4}-\d{2})$/.test(m.trim()) //formato
-    );
-  });
+  calendar.innerHTML = "";
+
+  // Filtramos los meses válidos (formato "YYYY-MM")
+  const months = monthsRaw.filter(m =>
+    !m.includes(".txt") &&
+    !m.includes(".tar.gz") &&
+    /^(\d{4}-\d{2})$/.test(m.trim())
+  );
+
+  // Extraemos solo los números de mes disponibles (ej. "2024-03" → "03")
+  const mesesDisponibles = months.map(m => m.trim().split("-")[1]);
 
   if (months.length === 0) {
     calendar.innerHTML = `<h4>No hay meses válidos para ${year}</h4>`;
     return;
   }
 
-  calendar.innerHTML = `<h4>Meses disponibles en ${year}</h4>`;
+  calendar.innerHTML = `<h4>Meses del año ${year}</h4>`;
 
-  months.forEach(m => {
+  nombresMeses.forEach((nombreMes, index) => {
+    const numeroMes = String(index + 1).padStart(2, "0"); // "01", "02", ...
     const btn = document.createElement("button");
-    btn.textContent = m;
+    btn.textContent = nombreMes;
     btn.classList.add("calendar-button");
 
-    btn.addEventListener("click", () => {
-      calendar.innerHTML = "";
-      load_dates(year, m);
-    });
-    if(DescargaActi === "none"){
-      btn_download.style.display="none";
-      btn_plot.style.display = "none";
+    if (mesesDisponibles.includes(numeroMes)) {
+      // Mes disponible → activamos botón
+      btn.addEventListener("click", () => {
+        calendar.innerHTML = "";
+        load_dates(year, `${year}-${numeroMes}`);
+      });
+    } else {
+      // Mes no disponible → deshabilitamos visualmente
+      btn.disabled = true;
+      btn.classList.add("mes-no-disponible");
     }
 
     calendar.appendChild(btn);
-
-    estadoPanel = "meses";
-    btnBack.style.display = "inline-block";
-
-
   });
+
+  if (DescargaActi === "none") {
+    btn_download.style.display = "none";
+    btn_plot.style.display = "none";
+  }
+
+  estadoPanel = "meses";
+  btnBack.style.display = "inline-block";
+  actualizarTextoBoton(); // si usas texto dinámico
 }
 
 async function load_dates(year, rawMonth) {
   DescargaActi = "Acti";
-  console.log("mes: ", rawMonth)
-  const onlyMonth = rawMonth.split("-").pop(); // evita duplicación
-  const days = await get_days(station.value, rawMonth);
-  mesSeleccionado = rawMonth;
-  calendar.innerHTML = `<h4>Días disponibles para ${year}-${onlyMonth}:</h4>`;
-  calendar.innerHTML = "";
+  console.log("Mes seleccionado:", rawMonth);
 
-  days.forEach(d => {
-    const fechaCompleta = d.trim();
-    
+  const [año, mes] = rawMonth.split("-");
+  mesSeleccionado = rawMonth;
+
+  const daysRaw = await get_days(station.value, rawMonth);
+
+  // Extraemos solo los días disponibles (ej. "2024-03-05" → "05")
+  const diasDisponibles = daysRaw
+    .filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d.trim()))
+    .map(d => d.trim().split("-")[2]);
+
+  // Número total de días en el mes
+  const diasEnMes = new Date(año, mes, 0).getDate();
+
+  calendar.innerHTML = `<h4>Días de ${nombresMeses[parseInt(mes) - 1]} ${año}:</h4>`;
+
+  for (let dia = 1; dia <= diasEnMes; dia++) {
+    const diaStr = String(dia).padStart(2, "0"); // "01", "02", ...
+    const fechaCompleta = `${año}-${mes}-${diaStr}`;
+
     const btn = document.createElement("button");
-    btn.textContent = fechaCompleta;
+    btn.textContent = diaStr;
     btn.classList.add("calendar-button");
 
-    btn.addEventListener("click", () => {
-      console.log("Fecha seleccionada:", fechaCompleta);
-      document.getElementById("Fecha").value = fechaCompleta;
-      
-      get_csv();
-      document.getElementById("btn_plot").disabled = false;
-      document.getElementById("btn_download").disabled = false;
+    if (diasDisponibles.includes(diaStr)) {
+      // Día disponible → activamos botón
+      btn.addEventListener("click", () => {
+        console.log("Fecha seleccionada:", fechaCompleta);
+        document.getElementById("Fecha").value = fechaCompleta;
 
-      const allButtons = calendar.querySelectorAll(".calendar-button");
-      allButtons.forEach(b => b.classList.remove("selected-date"));
-      btn.classList.add("selected-date");
-      if(DescargaActi === "Acti"){
-      btn_download.style.display="inline-block";
-      btn_plot.style.display = "inline-block"
+        get_csv();
+        document.getElementById("btn_plot").disabled = false;
+        document.getElementById("btn_download").disabled = false;
+
+        const allButtons = calendar.querySelectorAll(".calendar-button");
+        allButtons.forEach(b => b.classList.remove("selected-date"));
+        btn.classList.add("selected-date");
+
+        if (DescargaActi === "Acti") {
+          btn_download.style.display = "inline-block";
+          btn_plot.style.display = "inline-block";
+        }
+      });
+    } else {
+      // Día no disponible → deshabilitamos visualmente
+      btn.disabled = true;
+      btn.classList.add("dia-no-disponible");
     }
-  
-    });
 
     calendar.appendChild(btn);
+  }
 
-        estadoPanel = "días";
-    btnBack.style.display = "inline-block";
-  });
+  estadoPanel = "dias";
+  btnBack.style.display = "inline-block";
+  actualizarTextoBoton(); // si usas texto dinámico
 }
+
 
 
 
@@ -286,3 +324,26 @@ btnBack.addEventListener("click", () => {
     
   }
 });
+
+document.getElementById("helpButton").addEventListener("click", () => {
+  const infoBox = document.getElementById("infoBox");
+  infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
+});
+
+document.getElementById("closeHelp").addEventListener("click", () => {
+  document.getElementById("infoBox").style.display = "none";
+});
+
+  const helpButton = document.getElementById("helpButton");
+  const infoBox = document.getElementById("infoBox");
+  const closeHelp = document.getElementById("closeHelp");
+
+  helpButton.addEventListener("click", () => {
+    infoBox.style.display = "block";
+    helpButton.style.display = "none"; 
+  });
+
+  closeHelp.addEventListener("click", () => {
+    infoBox.style.display = "none";
+    helpButton.style.display = "inline-block"; 
+  });
