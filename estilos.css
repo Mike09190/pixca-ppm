@@ -36,7 +36,7 @@ body {
 }
 .logoPembu{
   height: 10%;
-  width: auto;
+  max-width: 10%;
 
   display: flex;
 
@@ -46,7 +46,7 @@ body {
 }
 .logoICA {
 
-  width: auto;
+  max-width: 30%;
   height: 80%;
 
   
@@ -54,7 +54,7 @@ body {
 }
 .logoUNAM {
   height: 11%;
-  width: auto;
+  max-width: 9%;
   
   display: flex;
   position: absolute;
@@ -64,7 +64,7 @@ body {
   filter: invert(1);
 }
 h1 {
-   font-size: 4vw; 
+   font-size: 3rem; 
   color: var(--text-color); 
   text-align: center;
   margin: 20px;
@@ -120,7 +120,7 @@ select {
 }
 
 h3 {
-    font-size: 1.8em;
+    font-size: 1.5rem;
     text-align: center;
     color:var(--text-color);
     margin: 3%;
@@ -128,12 +128,12 @@ h3 {
 h4{
    background-size: contain;
    width: 70%;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   margin: 2%;
   color: var(--text-color);
 }
 .div_sel {
-  font-size: 1.8em;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center; 
